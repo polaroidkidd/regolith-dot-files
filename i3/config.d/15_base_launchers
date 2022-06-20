@@ -1,0 +1,11 @@
+###############################################################################
+# Launcher dialogs
+###############################################################################
+
+## Launch // Terminal // <> Enter ##
+# set_from_resource $i3-wm.binding.terminal i3-wm.binding.terminal Return
+bindsym $mod+y exec --no-startup-id /usr/bin/x-terminal-emulator
+
+## Launch // Browser // <><Shift> Enter ##
+# set_from_resource $i3-wm.binding.browser i3-wm.binding.browser c
+bindsym $mod+c exec --no-startup-id /snap/bin/firefox
