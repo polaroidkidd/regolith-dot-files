@@ -156,7 +156,7 @@ font pango:$i3-wm.font
 include $HOME/.config/regolith2/i3/config.d/*
 
 workspace "$ws1" output DisplayPort-0
-workspace "$ws10" output HDMI-A-0
+workspace "$ws10" output DisplayPort-1
 workspace "$ws2" output HDMI-A-1
 
 bindsym $mod+Ctrl+Right resize shrink width 15 px or 2 ppt
@@ -174,3 +174,4 @@ for_window [title="Udeler | Udemy Course Downloader"] floating disable sticky di
 for_window [class="Bitwarden"] floating enable sticky enable border none
 for_window [class="Org.gnome.Nautilus" ] floating enable
 for_window [title="Welcome to IntelliJ IDEA" ] floating enable
+for_window [title="Screenshot" ] floating enable
