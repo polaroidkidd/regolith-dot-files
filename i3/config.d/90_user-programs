@@ -8,4 +8,4 @@ set_from_resource $i3-wm.program.2 i3-wm.program.2 :
 exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
-exec --no-startup-id nitrogen
+exec --no-startup-id  nitrogen --restore
