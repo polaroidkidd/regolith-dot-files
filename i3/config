@@ -156,8 +156,9 @@ font pango:$i3-wm.font
 include $HOME/.config/regolith2/i3/config.d/*
 
 workspace "$ws1" output DisplayPort-0
+workspace "$ws2" output DisplayPort-0
 workspace "$ws10" output DisplayPort-1
-workspace "$ws2" output HDMI-A-1
+workspace "$ws3" output HDMI-A-1
 
 bindsym $mod+Ctrl+Right resize shrink width 15 px or 2 ppt
 bindsym $mod+Ctrl+Up resize grow height 15 px or 2 ppt
