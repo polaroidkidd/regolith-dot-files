@@ -1,0 +1,7 @@
+[user]
+   name = Daniel Einars
+   email = "daniel.einars@ti8m.ch"
+   signingkey = E60DF0B473C20805
+
+[commit]
+	gpgSign = true
