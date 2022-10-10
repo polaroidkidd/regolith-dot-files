@@ -173,6 +173,13 @@ alias gcp='__gcp'
 # Aliases for shutting down
 alias sdn="sudo shutdown -P now"
 alias rbn="sudo shutdown -r now"
+alias usdn="uu -y && sdn"
+
+# cat-copy to clipboard
+function __catCopyToClipboard(){
+  cat "$*" | xclip -sel cip
+}
+alias ccp="__catCopyToClipboard"
 
 # Alias for installing and removing
 alias gimme="sudo apt-get install"
@@ -180,12 +187,14 @@ alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 alias uu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias rem="sudo apt autoremove -y"
-alias usdn="uu -y && sdn"
 
 alias begone="__begone && rem"
 function __begone() {
   sudo apt-get purge "$1"
 }
+
+# Docker activate buildkit
+# export DOCKER_BUILDKIT=1
 
 # Docker & Docker-Compose alias
 alias dc="docker-compose"
@@ -323,8 +332,9 @@ function __nodeCleanInit(){
 }
 
 
-
 alias nci="__nodeCleanInit"
+# pnpm alias
+alias pn=pnpm
 # CDK
 alias cdkd="cdk deploy"
 function __cdkill(){
@@ -464,7 +474,7 @@ load-nvmrc() {
     fi
   elif [ "$node_version" != "$(nvm version default)" ]; then
     echo "Reverting to nvm default version"
-    nvm use default
+    nvm use defaut
   fi
 }
 add-zsh-hook chpwd load-nvmrc
@@ -477,3 +487,6 @@ export SDKMAN_DIR="/home/dle/.sdkman"
 export STARSHIP_CONFIG=/home/dle/.config/starship.toml
 
 eval "$(starship init zsh)"
+# bit
+export PATH="$PATH:/home/dle/bin"
+# bit end
