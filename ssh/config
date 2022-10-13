@@ -5,13 +5,13 @@ Host faberdev
     IdentityFile /home/dle/.ssh/dle.xps@vps.faber.dev
 
 Host cassandra
-    HostName 144.2.104.79
+    HostName 144.2.102.89
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle.desktop@cassandra
 
 Host duplicatissh 
-    HostName 144.2.104.79
+    HostName 144.2.102.89
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle.desktop@cassandra
@@ -36,7 +36,7 @@ Host gitlab.ti8m.ch
     IdentityFile /home/dle/.ssh/dle.desktop@gitlab.ti8m.ch
 
 Host pi
-    HostName 144.2.104.79
+    HostName 144.2.102.89
     User pi
     Port 8899
     IdentityFile /home/dle/.ssh/dle.xps@pi
