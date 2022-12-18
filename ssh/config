@@ -18,7 +18,7 @@ Host duplicatissh
     LocalForward 8200 localhost:8200
 
 Host dozzle
-    HostName 144.2.106.144
+    HostName 144.2.103.196
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle.desktop@cassandra
