@@ -177,3 +177,4 @@ for_window [class="Org.gnome.Nautilus" ] floating enable
 for_window [title="Welcome to IntelliJ IDEA" ] floating enable
 for_window [title="Screenshot" ] floating enable
 for_window [title="Nitrogen" ] floating enable
+for_window [title="splash" ] floating enable
