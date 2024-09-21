@@ -133,3 +133,18 @@ workspace "$ws8" output HDMI-A-0
 workspace "$ws1" output DisplayPort-1
 workspace "$ws2" output DisplayPort-1
 
+
+
+###############################################################################
+# Custom Floating Windows
+###############################################################################
+for_window [class="copyq"] floating enable sticky disable border none  
+for_window [class="Emulator"] floating enable sticky disable border none  
+for_window [title="^Android Emulator -"] floating enable sticky disable border none
+for_window [title="Udeler | Udemy Course Downloader"] floating disable sticky disable enable boarder none 
+for_window [class="Bitwarden"] floating enable sticky enable border none
+for_window [class="Org.gnome.Nautilus" ] floating enable
+for_window [title="Welcome to IntelliJ IDEA" ] floating enable
+for_window [title="Screenshot" ] floating enable
+for_window [title="Nitrogen" ] floating enable
+for_window [title="splash" ] floating enable
