@@ -532,7 +532,7 @@ export PATH="$(which node)":$PATH
 
 # export PATH="$HOME/DevTools/jetbrains/idea/idea-IU-213.6777.52/bin/idea.sh:$PATH"
 
-alias rs="/home/dle/.config/regolith2/rs.sh"
+alias rs="/home/dle/.config/regolith3/rs.sh"
 
 alias files="nautilus . & disonw"
 
