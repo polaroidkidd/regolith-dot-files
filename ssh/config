@@ -1,0 +1,51 @@
+Host cassandra
+    HostName  158.181.120.230
+    User dle
+    Port 29376
+    IdentityFile /home/dle/.ssh/dle.desktop@cassandra
+    LocalForward 9999 localhost:8888
+
+
+Host duplicatissh
+    HostName 144.2.108.167
+    User dle
+    Port 29376
+    IdentityFile /home/dle/.ssh/dle.desktop@cassandra
+    LocalForward 8200 localhost:8200
+
+Host dozzle
+    HostName 144.2.108.167
+    User dle
+    Port 29376
+    IdentityFile /home/dle/.ssh/dle.desktop@cassandra
+    LocalForward 9999 localhost:8888
+
+Host cassandra-local
+    HostName  192.168.50.108
+    User dle
+    Port 29376
+    IdentityFile /home/dle/.ssh/dle.desktop@cassandra
+
+Host github
+    HostName github.com
+    User git
+    Port 22
+    IdentityFile /home/dle/.ssh/dle.desktop@github.com
+
+Host gitlab.ti8m.ch
+    HostName gitlab.ti8m.ch
+    User git
+    Port 22
+    IdentityFile /home/dle/.ssh/dle.desktop@gitlab.ti8m.ch
+
+Host pi
+    HostName 144.2.108.167
+    User pi
+    Port 8899
+    IdentityFile /home/dle/.ssh/dle.xps@pi
+
+Host pi-local
+    HostName 192.168.50.132
+    User pi
+    Port 8899
+    IdentityFile /home/dle/.ssh/dle.xps@pi
