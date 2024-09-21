@@ -1,0 +1,26 @@
+[pull]
+rebase = true
+[includeIf "gitdir:~/DevWork/"]
+path = .gitconfig-me
+[includeIf "gitdir:~/.config/"]
+path = .gitconfig-me
+[includeIf "gitdir:~/DevTools/"]
+path = .gitconfig-me
+[includeIf "gitdir:~/DevWork/ti8m/"]
+path = .gitconfig-ti8m
+[core]
+	excludesfile = /home/dle/.gitignore_global
+	autocrlf = input
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = master
+[alias]
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+[push]
+	default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

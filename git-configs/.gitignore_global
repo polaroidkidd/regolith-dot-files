@@ -1,0 +1,7 @@
+*.iml
+.idea
+node_modules
+bun.lockb
+target
+out
+.gitlab-ci-local
