@@ -130,7 +130,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle.desktop@cassandra dle.desktop@github.com dle.desktop@gitlab.ti8m.ch  dle.xps@pi 
+zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle@pi 
 zstyle :omz:plugins:ssh-agent lifetime
 zstyle :omz:plugins:nvm autoload true
 
@@ -590,4 +590,3 @@ esac
 # pnpm end
 
 export WFICA_OPTS="-span o"
-
