@@ -1,3 +1,2 @@
 i3-wm.program.unclutter: :
-!regolith.look.path: /usr/share/regolith-look/lascaille
 regolith.look.path: /usr/share/regolith-look/nord
