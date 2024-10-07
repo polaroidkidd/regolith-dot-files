@@ -8,7 +8,7 @@ export ZSH="/home/dle/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -567,9 +567,11 @@ export PATH="`yarn global bin`:$PATH"
 # Kill Forticlient
 alias killforti="sudo systemctl stop forticlient && sudo -k" 
 
-export STARSHIP_CONFIG=/home/dle/.config/starship.toml
+export STARSHIP_CONFIG=/home/dle/.config/starship/starship.toml
 
+# eval "$(starship init zsh)"
 eval "$(starship init zsh)"
+
 # # bit
 # export PATH="$PATH:/home/dle/bin"
 # # bit end

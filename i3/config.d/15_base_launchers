@@ -8,7 +8,7 @@ bindsym $mod+y exec --no-startup-id /usr/bin/x-terminal-emulator
 
 ## Launch // Mozilla Firefox // <><Shift> Enter ##
 # set_from_resource $i3-wm.binding.browser i3-wm.binding.browser c
-bindsym $mod+c exec --no-startup-id /opt/firefox/firefox
+bindsym $mod+c exec --no-startup-id /usr/bin/firefox
 
 ## Launch // Google Chrome // <><Shift> Enter ##
 # set_from_resource $i3-wm.binding.browser i3-wm.binding.browser c
