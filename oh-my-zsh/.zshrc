@@ -103,6 +103,9 @@ export ZSH="/home/dle/.oh-my-zsh"
 export YARN_SKIP_COREPACK_CHECK=0
 export COREPACK_ROOT=0
 
+# Disable error message in VS Code "The terminal process "/usr/bin/zsh" terminated with exit code: 130."
+# https://stackoverflow.com/questions/71519436/the-terminal-process-usr-bin-zsh-terminated-with-exit-code-14
+export TMOUT=0
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   z
@@ -131,7 +134,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle@pi 
+zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle@pi
 zstyle :omz:plugins:ssh-agent lifetime
 zstyle :omz:plugins:nvm autoload true
 
@@ -378,7 +381,7 @@ function __nodeCleanInstall(){
   BOLD=$(tput bold)
   echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
   find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
-  
+
   wait
   if [[ -f "${PWD}/package-lock.json" ]]; then
     echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
@@ -567,18 +570,18 @@ export ANDROID_HOME="/home/dle/Android/Sdk"
 # Use global yarn packages from cli
 export PATH="`yarn global bin`:$PATH"
 # Kill Forticlient
-alias killforti="sudo systemctl stop forticlient && sudo -k" 
+alias startforti="/home/dle/DevTools/forticlient-sctipts/restart-forticlient.sh"
+alias stopforti="/home/dle/DevTools/forticlient-sctipts/stop-forticlient.sh"
 
 export STARSHIP_CONFIG=/home/dle/.config/starship/starship.toml
 
-# eval "$(starship init zsh)"
 eval "$(starship init zsh)"
 
 # # bit
 # export PATH="$PATH:/home/dle/bin"
 # # bit end
 
-export NODE_OPTIONS="--max_old_space_size=16000"
+export NODE_OPTIONS="--max_old_space_size=16384"
 export TERM=xterm-256color
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -593,4 +596,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export WFICA_OPTS="-span o"
+

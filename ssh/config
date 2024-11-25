@@ -8,18 +8,14 @@ Host cassandra
     LocalForward 8002 localhost:8080
 
 
-Host dozzle
-    HostName 144.2.108.167
-    User dle
-    Port 29376
-    IdentityFile /home/dle/.ssh/dle@cassandra
-    LocalForward 9999 localhost:8888
-
 Host cassandra-local
     HostName  192.168.50.108
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
+    LocalForward 8000 localhost:8888
+    LocalForward 8001 localhost:8200
+    LocalForward 8002 localhost:8080
 
 Host github
     HostName github.com

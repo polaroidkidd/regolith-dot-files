@@ -148,3 +148,4 @@ for_window [title="Welcome to IntelliJ IDEA" ] floating enable
 for_window [title="Screenshot" ] floating enable
 for_window [title="Nitrogen" ] floating enable
 for_window [title="splash" ] floating enable
+for_window [title=".*Google Chrome for Testing.*" ] floating enable
