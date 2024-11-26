@@ -113,6 +113,7 @@ plugins=(
   sudo
   safe-paste
   nvm
+  pnpm-shell-completion
 )
   autoload -U compinit && compinit
 
@@ -377,6 +378,7 @@ function __nodeCleanInstall(){
   BOLD=$(tput bold)
   echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
   find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+  
   wait
   if [[ -f "${PWD}/package-lock.json" ]]; then
     echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
