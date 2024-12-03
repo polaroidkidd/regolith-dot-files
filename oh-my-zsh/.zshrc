@@ -155,6 +155,10 @@ zstyle ':completion:*:hosts' hosts $_ssh_config
 ################ BEGIN  ALIAS #######################
 #####################################################
 
+# Disable Turbo Telemetry
+export TURBO_TELEMETRY_DISABLED=1
+export DO_NOT_TRACK=1
+
 # Useful Git Commands
 alias gl="git log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%aN %Creset%s' --date=iso --graph --branches"
 alias gall="git add --all"
@@ -332,43 +336,50 @@ function __nodeWipeInstall(){
   GREEN=`tput setaf 2`
   RESET=`tput sgr0`
   BOLD=$(tput bold)
-  echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
-  find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
-  wait
-  if [[ -f "${PWD}/package-lock.json" ]]; then
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}************** clearning global npm cache' **************${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    npm cache clean --force
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}*************** installing using 'npm ci' ***************${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    npm ci
-  elif [[ -f "${PWD}/yarn.lock" ]]; then
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}************* clearning global yarn cache' **************${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    yarn cache clean
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    yarn install --frozen-lockfile
-  elif [[ -f "${PWD}/pnpm-lock.yaml" ]]; then
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}************* clearning global pnpm cache' **************${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"    
-    pnpm store prune
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}*** installing using 'pnpm install --frozen-lockfile' ***${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    pnpm i --frozen-lockfile
+  if [[ -f "${PWD}/package-lock.json" || -f "${PWD}/yarn.lock" || -f "${PWD}/pnpm-lock.yaml" ]]; then
+    echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
+    find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+    wait
+
+    if [[ -f "${PWD}/package-lock.json" ]]; then
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}************** clearning global npm cache' **************${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      npm cache clean --force
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}*************** installing using 'npm ci' ***************${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      npm ci
+    elif [[ -f "${PWD}/yarn.lock" ]]; then
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}************* clearning global yarn cache' **************${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      yarn cache clean
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      yarn install --frozen-lockfile
+    elif [[ -f "${PWD}/pnpm-lock.yaml" ]]; then
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}************* clearning global pnpm cache' **************${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      pnpm store prune
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}*** installing using 'pnpm install --frozen-lockfile' ***${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      pnpm i --frozen-lockfile
+    else
+      echo -e "${BOLD}${RED}***********************************************************${RESET}"
+      echo -e "${BOLD}${RED}****************** no lock file found *********************${RESET}"
+      echo -e "${BOLD}${RED}*********** please run pnpm/npm/yarn install **************${RESET}"
+      echo -e "${BOLD}${RED}***********************************************************${RESET}"
+    fi
   else
     echo -e "${BOLD}${RED}***********************************************************${RESET}"
-    echo -e "${BOLD}${RED}****************** no lock file found *********************${RESET}"
-    echo -e "${BOLD}${RED}*********** please run pnpm/npm/yarn install **************${RESET}"
+    echo -e "${BOLD}${RED}******* no lock file found in current directory ***********${RESET}"
+    echo -e "${BOLD}${RED}******** are you sure you're in a project dir? ************${RESET}"
     echo -e "${BOLD}${RED}***********************************************************${RESET}"
   fi
-
 }
 
 
@@ -379,32 +390,38 @@ function __nodeCleanInstall(){
   BLUE=`tput setaf 5`
   RESET=`tput sgr0`
   BOLD=$(tput bold)
-  echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
-  find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+  if [[ -f "${PWD}/package-lock.json" || -f "${PWD}/yarn.lock" || -f "${PWD}/pnpm-lock.yaml" ]]; then
+    echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
+    find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
 
-  wait
-  if [[ -f "${PWD}/package-lock.json" ]]; then
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}*************** installing using 'npm ci' ***************${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    npm ci
-  elif [[ -f "${PWD}/yarn.lock" ]]; then
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    yarn install --frozen-lockfile
-  elif [[ -f "${PWD}/pnpm-lock.yaml" ]]; then
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    echo -e "${BOLD}${GREEN}*** installing using 'pnpm install --frozen-lockfile' ***${RESET}"
-    echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-    pnpm i --frozen-lockfile
+    wait
+    if [[ -f "${PWD}/package-lock.json" ]]; then
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}*************** installing using 'npm ci' ***************${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      npm ci
+    elif [[ -f "${PWD}/yarn.lock" ]]; then
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      yarn install --frozen-lockfile
+    elif [[ -f "${PWD}/pnpm-lock.yaml" ]]; then
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      echo -e "${BOLD}${GREEN}*** installing using 'pnpm install --frozen-lockfile' ***${RESET}"
+      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+      pnpm i --frozen-lockfile
+    else
+      echo -e "${BOLD}${RED}***********************************************************${RESET}"
+      echo -e "${BOLD}${RED}****************** no lock file found *********************${RESET}"
+      echo -e "${BOLD}${RED}*********** please run pnpm/npm/yarn install **************${RESET}"
+      echo -e "${BOLD}${RED}***********************************************************${RESET}"
+    fi
   else
     echo -e "${BOLD}${RED}***********************************************************${RESET}"
-    echo -e "${BOLD}${RED}****************** no lock file found *********************${RESET}"
-    echo -e "${BOLD}${RED}*********** please run pnpm/npm/yarn install **************${RESET}"
+    echo -e "${BOLD}${RED}******* no lock file found in current directory ***********${RESET}"
+    echo -e "${BOLD}${RED}******** are you sure you're in a project dir? ************${RESET}"
     echo -e "${BOLD}${RED}***********************************************************${RESET}"
   fi
-
 }
 alias nci="__nodeCleanInstall"
 alias nwi="__nodeWipeInstall"
