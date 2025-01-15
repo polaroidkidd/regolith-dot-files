@@ -117,6 +117,7 @@ plugins=(
   safe-paste
   nvm
   pnpm-shell-completion
+  gcloud
 )
   autoload -U compinit && compinit
 
@@ -134,7 +135,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle@pi
+zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi
 zstyle :omz:plugins:ssh-agent lifetime
 zstyle :omz:plugins:nvm autoload true
 

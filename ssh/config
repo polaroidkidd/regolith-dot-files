@@ -30,13 +30,13 @@ Host gitlab.ti8m.ch
     IdentityFile /home/dle/.ssh/dle@gitlab.ti8m.ch
 
 Host pi
-    HostName 144.2.108.167
+    HostName 158.181.120.230
     User pi
     Port 8899
-    IdentityFile /home/dle/.ssh/dle@pi
+    IdentityFile /home/dle/.ssh/dle.xps@pi
 
 Host pi-local
     HostName 192.168.50.132
     User pi
     Port 8899
-    IdentityFile /home/dle/.ssh/dle@pi
+    IdentityFile /home/dle/.ssh/dle.xps@pi
