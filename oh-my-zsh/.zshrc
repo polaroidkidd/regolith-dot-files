@@ -118,8 +118,12 @@ plugins=(
   nvm
   pnpm-shell-completion
   gcloud
+  yarn-autocompletions
+  kubectl-autocomplete
 )
-  autoload -U compinit && compinit
+
+  autoload -Uz compinit && compinit
+
 
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238
@@ -165,7 +169,7 @@ alias gl="git log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%aN %Creset%s' --dat
 alias gall="git add --all"
 alias ga="git add"
 alias gs="git status"
-alias gb="git branch -a"
+alias gb="git branch --show-current"
 alias gco="git checkout"
 alias gcm="git commit -m"
 alias gp="git push"
@@ -173,7 +177,7 @@ alias gpa="git push --all"
 alias gpt="git push --follow-tags"
 alias gip="git pull --verbose"
 alias gbdo="git push --delete origin"
-
+alias cb="git branch --show-current | tr -d "\n" | xclip -sel clip"
 alias gcmc=__gcmc
 fuction __gcmc(){
   git commit -m "`git symbolic-ref --short HEAD | grep -o -E '[A-Z]{3}-[0-9]{0,10}'`: $1"
@@ -209,6 +213,13 @@ alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 alias uu="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias rem="sudo apt autoremove -y"
+
+
+function __cursor {
+        /home/dle/DevTools/cursor/cursor.AppImage --no-sandbox "$1" & 
+        disown
+}
+alias cursor="__cursor"
 
 alias begone="__begone && rem"
 function __begone() {
@@ -601,6 +612,7 @@ eval "$(starship init zsh)"
 
 export NODE_OPTIONS="--max_old_space_size=16384"
 export TERM=xterm-256color
+export ICAROOT="/home/dle/DevTools/citrix"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dle/.sdkman"
@@ -615,3 +627,4 @@ esac
 # pnpm end
 
 
+export WFICA_OPTS="-span o"
