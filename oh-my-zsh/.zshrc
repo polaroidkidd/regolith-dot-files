@@ -341,8 +341,8 @@ alias dprune='__dprune'
 alias dkill='__dkill'
 alias dvipe='__dvipe'
 
-
-
+# Silence warnings
+export NODE_NO_WARNINGS=1
 function __nodeWipeInstall(){
   RED=`tput setaf 1`
   GREEN=`tput setaf 2`

@@ -17,10 +17,10 @@ format = "$all"
 
 [gcloud]
 disabled = false
-format = ' on [$project]($style) '
+format = '️on [$project]($style) '
 
 [sudo]
-style = "bold green"
+style = "bold red"
 symbol = "💀 "
 disabled = false
 
@@ -37,6 +37,9 @@ style = "yellow"
 
 [python]
 disabled = true
+
+
+
 # # Which is equivalent to
 # format = """
 # $username\
