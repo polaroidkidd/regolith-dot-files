@@ -110,8 +110,7 @@ $character"""
 [gcloud]
 disabled = false
 symbol = ""
-format = '️\[$symbol [$project]($style)\]'
-# format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+format = '️\[[$symbol $project]($style)\]'
 [sudo]
 
 symbol = "💀💀💀"
