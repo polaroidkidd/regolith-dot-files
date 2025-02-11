@@ -8,4 +8,12 @@ import = [
 size = 12
 
 [font.normal]
-family = "Noto Mono"
+family = "monospace"
+
+
+[font.bold]
+family = "monospace"
+
+[font.italic]
+family = "monospace"
+

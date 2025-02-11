@@ -57,7 +57,6 @@ $kotlin\
 $gradle\
 $lua\
 $nim\
-$nodejs\
 $ocaml\
 $opa\
 $perl\
@@ -92,6 +91,7 @@ $azure\
 $nats\
 $direnv\
 $env_var\
+$nodejs\
 $crystal\
 $custom\
 $cmd_duration\
@@ -109,8 +109,8 @@ $character"""
 
 [gcloud]
 disabled = false
-symbol = "☁️ "
-format = '️\[$symbol on [$project]($style)\]'
+symbol = ""
+format = '️\[$symbol [$project]($style)\]'
 # format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 [sudo]
 
@@ -136,6 +136,7 @@ disabled = false
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 
 [java]
+symbol = " "
 style = "bold fg:220"
 format = '\[[$symbol($version)]($style)\]'
 
@@ -203,7 +204,6 @@ format = '([\[$all_status$ahead_behind\]]($style))'
 format = '\[[$symbol($version)]($style)\]'
 
 [gradle]
-symbol = " "
 format = '\[[$symbol($version)]($style)\]'
 
 [guix_shell]
@@ -248,6 +248,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$state( \($name\))]($style)\]'
 
 [nodejs]
+symbol = " "
 format = '\[[$symbol($version)]($style)\]'
 
 [ocaml]
@@ -263,6 +264,7 @@ format = '\[[$symbol$cloud(\($project\))]($style)\]'
 format = '\[[$symbol]($style)\]'
 
 [package]
+symbol = " "
 format = '\[[$symbol$version]($style)\]'
 
 [perl]

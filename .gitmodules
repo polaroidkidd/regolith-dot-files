@@ -1,3 +1,6 @@
 [submodule "alacritty/themes"]
 	path = alacritty/themes
 	url = git@github.com:alacritty/alacritty-theme.git
+[submodule "icons-in-terminal"]
+	path = icons-in-terminal
+	url = git@github.com:sebastiencs/icons-in-terminal.git
