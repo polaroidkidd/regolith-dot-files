@@ -328,3 +328,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 
+[hostname]
+ssh_symbol = " "
+ssh_only = true
+style = "red bold"
