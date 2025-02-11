@@ -113,9 +113,10 @@ symbol = ""
 format = '️\[[$symbol $project]($style)\]'
 [sudo]
 
-symbol = "💀💀💀"
+symbol = "   "
+style = "bold red"
 disabled = false
-format = '\[$symbol\]'
+format = '\[[$symbol]($style)\]'
 
 
 
