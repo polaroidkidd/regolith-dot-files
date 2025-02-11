@@ -2,3 +2,4 @@ known_hosts
 known_hosts.old
 !ssh/config
 ssh
+fontconfig/conf.d/30-icons.conf
