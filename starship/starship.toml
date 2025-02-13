@@ -137,7 +137,7 @@ format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 
 [java]
 symbol = " "
-style = "bold fg:220"
+style = "bold fg:63"
 format = '\[[$symbol($version)]($style)\]'
 
 [aws]
@@ -204,6 +204,7 @@ format = '([\[$all_status$ahead_behind\]]($style))'
 format = '\[[$symbol($version)]($style)\]'
 
 [gradle]
+style = "bold fg:99"
 format = '\[[$symbol($version)]($style)\]'
 
 [guix_shell]
