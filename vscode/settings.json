@@ -182,4 +182,5 @@
     "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "'Noto Mono', 'monospace', in-terminal, 'icons-in-terminal'",
     "terminal.integrated.gpuAcceleration": "auto",
+    "tabnine.experimentalAutoImports": true,
 }

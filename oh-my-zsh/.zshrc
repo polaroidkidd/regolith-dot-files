@@ -100,7 +100,7 @@ export ZSH="/home/dle/.oh-my-zsh"
 
 # Disable Yarn Package Manager Errors
 # https://github.com/yarnpkg/yarn/issues/9015#issuecomment-1834502140
-export YARN_SKIP_COREPACK_CHECK=0
+# export YARN_SKIP_COREPACK_CHECK=0
 export COREPACK_ROOT=0
 
 # Disable error message in VS Code "The terminal process "/usr/bin/zsh" terminated with exit code: 130."
@@ -139,7 +139,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi
+zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi dle.hetzner@whatsin.fyi
 zstyle :omz:plugins:ssh-agent lifetime
 zstyle :omz:plugins:nvm autoload true
 
@@ -216,7 +216,7 @@ alias rem="sudo apt autoremove -y"
 
 
 function __cursor {
-        /home/dle/DevTools/cursor/cursor.AppImage --no-sandbox "$1" & 
+        /home/dle/DevTools/cursor/Cursor.AppImage --no-sandbox "$1" & 
         disown
 }
 alias cursor="__cursor"
