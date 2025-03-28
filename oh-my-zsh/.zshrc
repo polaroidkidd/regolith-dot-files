@@ -118,7 +118,7 @@ plugins=(
   nvm
   pnpm-shell-completion
   gcloud
-  yarn-autocompletions
+  
   kubectl-autocomplete
 )
 
@@ -150,6 +150,7 @@ source $ZSH/oh-my-zsh.sh
 fpath=(~/.zsh/completion $fpath)
 #fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
 fpath=(~/DevTools/blackblaze/B2_Command_Line_Tool/contrib $fpath)
+  fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -Uz compinit && compinit -i
 
 zstyle -s ':completion:*:hosts' hosts _ssh_config
