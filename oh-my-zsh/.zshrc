@@ -118,8 +118,9 @@ plugins=(
   nvm
   pnpm-shell-completion
   gcloud
-  
   kubectl-autocomplete
+  fast-syntax-highlighting
+  zsh-autocomplete
 )
 
   autoload -Uz compinit && compinit
