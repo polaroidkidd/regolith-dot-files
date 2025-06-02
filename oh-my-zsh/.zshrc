@@ -120,14 +120,12 @@ plugins=(
   gcloud
   kubectl-autocomplete
   fast-syntax-highlighting
-  zsh-autocomplete
+  # zsh-autocomplete
 )
 
-  autoload -Uz compinit && compinit
 
-
-# This speeds up pasting w/ autosuggest
-# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+# # This speeds up pasting w/ autosuggest
+# # https://github.com/zsh-users/zsh-autosuggestions/issues/238
 pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
   zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
@@ -146,17 +144,21 @@ zstyle :omz:plugins:nvm autoload true
 
 
 
+
 source $ZSH/oh-my-zsh.sh
 
-fpath=(~/.zsh/completion $fpath)
-#fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
-fpath=(~/DevTools/blackblaze/B2_Command_Line_Tool/contrib $fpath)
-  fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-autoload -Uz compinit && compinit -i
+# fpath=(~/.zsh/completion $fpath)
+# #fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
+# fpath=(~/DevTools/blackblaze/B2_Command_Line_Tool/contrib $fpath)
+# fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 
 zstyle -s ':completion:*:hosts' hosts _ssh_config
 [[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p'))
 zstyle ':completion:*:hosts' hosts $_ssh_config
+
+
+autoload -Uz compinit && compinit -i
 
 #####################################################
 ################ BEGIN  ALIAS #######################
