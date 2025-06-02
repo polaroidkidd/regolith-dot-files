@@ -558,7 +558,7 @@ source ~/.envs/.all.sh
 # source <(doctl completion zsh)
 # eval $(~/.linuxbrew/bin/brew shellenv)
 
-export PATH="$(yarn global bin):$PATH"
+# export PATH="$(yarn global bin):$PATH"
 export JAVA_HOME=/home/dle/.sdkman/candidates/java/current/bin/java
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -599,9 +599,6 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-export ANDROID_HOME="/home/dle/Android/Sdk"
-# Use global yarn packages from cli
-export PATH="`yarn global bin`:$PATH"
 # Kill Forticlient
 alias startforti="/home/dle/DevTools/forticlient-sctipts/restart-forticlient.sh"
 alias stopforti="/home/dle/DevTools/forticlient-sctipts/stop-forticlient.sh"
