@@ -1,21 +1,30 @@
 Host cassandra
-    HostName  158.181.120.230
+    HostName 2a02:16b:5207:0:2d8:61ff:fefc:ddc
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
-    LocalForward 8000 localhost:8888
+    LocalForward 8000 localhost:8000
     LocalForward 8001 localhost:8200
-    LocalForward 8002 localhost:8080
+    LocalForward 8002 localhost:8002
+    LocalForward 8004 localhost:8004
+    LocalForward 8005 localhost:8005
+    LocalForward 8006 localhost:8006
+    LocalForward 8007 localhost:8007
+    LocalForward 8008 localhost:2283
 
 
 Host cassandra-local
-    HostName  192.168.50.108
+    HostName  192.168.50.106
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
-    LocalForward 8000 localhost:8888
+    LocalForward 8000 localhost:8000
     LocalForward 8001 localhost:8200
-    LocalForward 8002 localhost:8080
+    LocalForward 8002 localhost:8002
+    LocalForward 8004 localhost:8004
+    LocalForward 8005 localhost:8005
+    LocalForward 8006 localhost:8080
+    LocalForward 8007 localhost:9705
 
 Host github
     HostName github.com
@@ -40,3 +49,21 @@ Host pi-local
     User pi
     Port 8899
     IdentityFile /home/dle/.ssh/dle.xps@pi
+
+Host whatsin.fyi
+    HostName 157.180.75.93
+    User root
+    Port 22
+    IdentityFile /home/dle/.ssh/whatsin.root@hetzner
+    
+Host db.whatsin.fyi
+    HostName 91.99.99.131
+    User administrator
+    Port 47899
+    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
+
+Host db-snapshot.whatsin.fyi
+    HostName 37.27.220.234
+    User administrator
+    Port 47899
+    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner

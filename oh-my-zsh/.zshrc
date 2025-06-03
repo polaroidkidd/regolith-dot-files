@@ -138,7 +138,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi dle.hetzner@whatsin.fyi
+zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi dle.whatsin@hetzner dle.hetzner@whatsin.fyi whatsin.root@hetzner 
 zstyle :omz:plugins:ssh-agent lifetime
 zstyle :omz:plugins:nvm autoload true
 
@@ -147,11 +147,12 @@ zstyle :omz:plugins:nvm autoload true
 
 source $ZSH/oh-my-zsh.sh
 
-# fpath=(~/.zsh/completion $fpath)
-# #fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
-# fpath=(~/DevTools/blackblaze/B2_Command_Line_Tool/contrib $fpath)
-# fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
+fpath=(~/.zsh/completion $fpath)
+fpath=(~/.oh-my-zsh/custom/completions $fpath)
+#fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
+fpath=(~/DevTools/blackblaze/B2_Command_Line_Tool/contrib $fpath)
+  fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -Uz compinit && compinit -i
 
 zstyle -s ':completion:*:hosts' hosts _ssh_config
 [[ -r ~/.ssh/config ]] && _ssh_config+=($(cat ~/.ssh/config | sed -ne 's/Host[=\t ]//p'))

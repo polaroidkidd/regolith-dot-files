@@ -1,3 +1,7 @@
+import = [
+    "~/.config/alacritty/themes/themes/doom_one.toml"
+]
+
 
 
 [font]
@@ -13,9 +17,4 @@ family = "monospace"
 [font.italic]
 family = "monospace"
 
-[general]
-
-import = [
-    "~/.config/alacritty/themes/themes/doom_one.toml"
-]
 
