@@ -1,5 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# https://github.com/zsh-users/zsh-completions?tab=readme-ov-file#using-zsh-frameworks
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
+# source "$ZSH/oh-my-zsh.sh"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/dle/.oh-my-zsh"
@@ -124,8 +128,8 @@ plugins=(
 )
 
 
-# # This speeds up pasting w/ autosuggest
-# # https://github.com/zsh-users/zsh-autosuggestions/issues/238
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
 pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
   zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
@@ -368,14 +372,22 @@ function __nodeWipeInstall(){
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
       npm ci
     elif [[ -f "${PWD}/yarn.lock" ]]; then
+      YARN_VERSION = `yarn --version | cut -c 1`
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
       echo -e "${BOLD}${GREEN}************* clearning global yarn cache' **************${RESET}"
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
       yarn cache clean
-      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-      echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
-      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-      yarn install --frozen-lockfile
+      if (( "${YARN_VERSION}" > 1 ));then
+        echo -e "${BOLD}${GREEN}*********************************************************************${RESET}"
+        echo -e "${BOLD}${GREEN}*** installing using 'yarn install --immutable --immutable-cache' ***${RESET}"
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        yarn install --immutable --immutable-cache
+      else
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        yarn install --frozen-lockfile
+      fi
     elif [[ -f "${PWD}/pnpm-lock.yaml" ]]; then
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
       echo -e "${BOLD}${GREEN}************* clearning global pnpm cache' **************${RESET}"
@@ -418,10 +430,21 @@ function __nodeCleanInstall(){
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
       npm ci
     elif [[ -f "${PWD}/yarn.lock" ]]; then
+      YARN_VERSION=`yarn --version | cut -c 1`
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-      echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
+      echo -e "${BOLD}${GREEN}************* clearning global yarn cache' **************${RESET}"
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-      yarn install --frozen-lockfile
+      if (( "${YARN_VERSION}" > 1 ));then
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        echo -e "${BOLD}${GREEN}*** installing using 'yarn install --immutable --immutable-cache' ***${RESET}"
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        yarn install --immutable --immutable-cache
+      else
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        yarn install --frozen-lockfile
+      fi
     elif [[ -f "${PWD}/pnpm-lock.yaml" ]]; then
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
       echo -e "${BOLD}${GREEN}*** installing using 'pnpm install --frozen-lockfile' ***${RESET}"
@@ -608,10 +631,6 @@ export STARSHIP_CONFIG=/home/dle/.config/starship/starship.toml
 
 eval "$(starship init zsh)"
 
-# # bit
-# export PATH="$PATH:/home/dle/bin"
-# # bit end
-
 export NODE_OPTIONS="--max_old_space_size=16384"
 export TERM=xterm-256color
 export ICAROOT="/home/dle/DevTools/citrix"
@@ -627,6 +646,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH="`yarn global bin`:$PATH"
 
 
 export WFICA_OPTS="-span o"
