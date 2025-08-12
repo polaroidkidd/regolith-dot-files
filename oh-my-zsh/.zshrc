@@ -106,6 +106,7 @@ export ZSH="/home/dle/.oh-my-zsh"
 # https://github.com/yarnpkg/yarn/issues/9015#issuecomment-1834502140
 # export YARN_SKIP_COREPACK_CHECK=0
 export COREPACK_ROOT=0
+export COREPACK_ENABLE_AUTO_PIN=0
 
 # Disable error message in VS Code "The terminal process "/usr/bin/zsh" terminated with exit code: 130."
 # https://stackoverflow.com/questions/71519436/the-terminal-process-usr-bin-zsh-terminated-with-exit-code-14
@@ -582,7 +583,7 @@ source ~/.envs/.all.sh
 # source <(doctl completion zsh)
 # eval $(~/.linuxbrew/bin/brew shellenv)
 
-# export PATH="$(yarn global bin):$PATH"
+export PATH="$(yarn global bin):$PATH"
 export JAVA_HOME=/home/dle/.sdkman/candidates/java/current/bin/java
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -651,3 +652,6 @@ export PATH="`yarn global bin`:$PATH"
 
 
 export WFICA_OPTS="-span o"
+
+# Skip the CIC-FE build when building the android/iOS app
+export SKIP_JS_APP_BUILD="true"
