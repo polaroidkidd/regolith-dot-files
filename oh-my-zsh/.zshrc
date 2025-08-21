@@ -125,6 +125,7 @@ plugins=(
   gcloud
   kubectl-autocomplete
   fast-syntax-highlighting
+  kubectl
   # zsh-autocomplete
 )
 
@@ -373,17 +374,17 @@ function __nodeWipeInstall(){
       echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
       npm ci
     elif [[ -f "${PWD}/yarn.lock" ]]; then
-      YARN_VERSION = `yarn --version | cut -c 1`
-      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-      echo -e "${BOLD}${GREEN}************* clearning global yarn cache' **************${RESET}"
-      echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
-      yarn cache clean
+      YARN_VERSION=`yarn --version | cut -c 1`
       if (( "${YARN_VERSION}" > 1 ));then
         echo -e "${BOLD}${GREEN}*********************************************************************${RESET}"
         echo -e "${BOLD}${GREEN}*** installing using 'yarn install --immutable --immutable-cache' ***${RESET}"
         echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
         yarn install --immutable --immutable-cache
       else
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        echo -e "${BOLD}${GREEN}************* clearning global yarn cache' **************${RESET}"
+        echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
+        # yarn cache clean
         echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
         echo -e "${BOLD}${GREEN}*** installing using 'yarn install --frozen-lockfile' ***${RESET}"
         echo -e "${BOLD}${GREEN}*********************************************************${RESET}"
@@ -652,6 +653,3 @@ export PATH="`yarn global bin`:$PATH"
 
 
 export WFICA_OPTS="-span o"
-
-# Skip the CIC-FE build when building the android/iOS app
-export SKIP_JS_APP_BUILD="true"
