@@ -107,7 +107,7 @@
   "eslint.problems.shortenToSingleLine": true,
   "eslint.format.enable": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Min Light",
+  "workbench.colorTheme": "Min Dark",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.history": 0,
   "editor.tokenColorCustomizations": {
@@ -192,5 +192,13 @@
       "http": "https://gitlab.ti8m.ch",
       "ssh": "ssh://gitlab.ti8m.ch"
     }
-  ]
+  ],
+  "chat.mcp.serverSampling": {
+    "Cursor (Global): context7": {
+      "allowedModels": [
+        "copilot/gpt-4.1",
+        "copilot/claude-sonnet-4"
+      ]
+    }
+  }
 }

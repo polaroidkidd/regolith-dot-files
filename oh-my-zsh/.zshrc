@@ -650,3 +650,7 @@ export PATH="`yarn global bin`:$PATH"
 
 
 export WFICA_OPTS="-span o"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/home/dle/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
