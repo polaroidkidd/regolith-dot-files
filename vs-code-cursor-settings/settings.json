@@ -82,7 +82,9 @@
       "when": []
     }
   ],
-  "git-autoconfig.configList": [{}],
+  "git-autoconfig.configList": [
+    {}
+  ],
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -200,5 +202,9 @@
         "copilot/claude-sonnet-4"
       ]
     }
-  }
+  },
+  "editor.formatOnSave": true,
+  "eslint.lintTask.enable": true,
+  "eslint.debug": true,
+  "editor.fontSize": 13
 }
