@@ -152,5 +152,9 @@
         "key": "ctrl+shift+alt+i",
         "command": "-workbench.panel.chatEditing",
         "when": "workbench.panel.chat.view.edits.active"
+    },
+    {
+        "key": "ctrl+alt+[Equal]",
+        "command": "workbench.action.terminal.new"
     }
 ]

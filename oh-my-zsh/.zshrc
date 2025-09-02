@@ -646,7 +646,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export PATH="`yarn global bin`:$PATH"
+# export PATH="`yarn global bin`:$PATH"
 
 
 export WFICA_OPTS="-span o"
