@@ -126,6 +126,7 @@ plugins=(
   kubectl-autocomplete
   fast-syntax-highlighting
   kubectl
+  oc
   # zsh-autocomplete
 )
 

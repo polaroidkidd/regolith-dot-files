@@ -207,5 +207,7 @@
   "editor.formatOnSave": true,
   "eslint.lintTask.enable": true,
   "eslint.debug": true,
-  "editor.fontSize": 13
+  "editor.fontSize": 13,
+  "workbench.editor.enablePreview": false,
+  "workbench.list.openMode": "doubleClick",
 }

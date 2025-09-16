@@ -1,12 +1,10 @@
 {
   "mcpServers": {
     "context7": {
-      "type": "http",
       "url": "https://mcp.context7.com/mcp",
       "headers": {
-        "CONTEXT7_API_KEY": "b0aa7397-ed4c-48ab-8e30-b0f01ae9f1d1"
-      },
-      "tools": ["get-library-docs", "resolve-library-id"]
+        "CONTEXT7_API_KEY": "ctx7sk-e30aae59-71e6-4760-86a9-dcf9ae3ad861"
+      }
     }
   }
 }
