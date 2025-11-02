@@ -127,6 +127,8 @@ plugins=(
   fast-syntax-highlighting
   kubectl
   oc
+  mvn
+  # zsh-pyenv
   # zsh-autocomplete
 )
 
@@ -655,3 +657,5 @@ export WFICA_OPTS="-span o"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/home/dle/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+

@@ -20,8 +20,9 @@
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
+
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit"
+    "source.organizeImports": "never"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -204,10 +205,43 @@
       ]
     }
   },
-  "editor.formatOnSave": true,
   "eslint.lintTask.enable": true,
-  "eslint.debug": true,
   "editor.fontSize": 13,
   "workbench.editor.enablePreview": false,
   "workbench.list.openMode": "doubleClick",
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "eslint.probe": [
+    "astro",
+    "civet",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "mdx",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc",
+    "svelte"
+  ],
+  "eslint.useESLintClass": true,
+  "chat.tools.terminal.autoApprove": {
+    "pnpm test --silent": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "pnpm test --reporter verbose": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  },
+  "yaml.keyOrdering": true,
+  "yaml.validate": false,
+  "eslint.quiet": true,
+  "workbench.editor.restoreViewState": false,
+  "chat.agent.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
 }
