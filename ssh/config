@@ -1,5 +1,5 @@
 Host cassandra
-    HostName 2a02:16b:520b:0:2d8:61ff:fefc:ddc
+    HostName 2a02:16b:5207:0:2d8:61ff:fefc:ddc
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
@@ -60,10 +60,21 @@ Host db.whatsin.fyi
     HostName 91.99.99.131
     User administrator
     Port 47899
-    IdentityFile /home/dle/.ssh/dle.whatsin@hetznercker
+    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
 Host db-snapshot.whatsin.fyi
     HostName 37.27.220.234
     User administrator
     Port 47899
     IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
+
+Host coolify.admin
+    HostName 65.108.243.203
+    User root
+    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
+
+Host coolify.apps
+    HostName 65.109.129.116
+    User root
+    LocalForward 3000 localhost:3000 # dozzle
+    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner    
