@@ -69,12 +69,11 @@ Host db-snapshot.whatsin.fyi
     IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
 Host coolify.admin
-    HostName 65.108.243.203
+    HostName 46.224.103.86
     User root
-    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
+    IdentityFile /home/dle/.ssh/dle.hetzner@coolify.dle.dev
 
 Host coolify.apps
-    HostName 65.109.129.116
+    HostName 135.181.94.123
     User root
-    LocalForward 3000 localhost:3000 # dozzle
-    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner    
+    IdentityFile /home/dle/.ssh/dle.hetzner@coolify.dle.dev

@@ -170,6 +170,8 @@ zstyle ':completion:*:hosts' hosts $_ssh_config
 
 autoload -Uz compinit && compinit -i
 
+
+
 #####################################################
 ################ BEGIN  ALIAS #######################
 #####################################################
@@ -557,9 +559,10 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 ################ BEGIN  PATHS #######################
 #####################################################
 
+
 # SNAP
 # export PATH="$PATH:/snap/bin"
-
+alias rm="/usr/bin/safe-rm"
 # work aliases
 # source ~/.aliases/.ti8m.sh
 # source "/home/dle/DevWork/ti8m/cic/local-images/save-images.sh"

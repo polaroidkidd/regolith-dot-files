@@ -20,7 +20,6 @@
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
-
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
@@ -77,13 +76,7 @@
   "[dockercompose]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "postfix.customTemplates": [
-    {
-      "name": "Info",
-      "body": "console.info('{{expr}}: ', {{expr}});",
-      "when": []
-    }
-  ],
+  "postfix.customTemplates": [],
   "git-autoconfig.configList": [
     {}
   ],
@@ -111,7 +104,7 @@
   "eslint.problems.shortenToSingleLine": true,
   "eslint.format.enable": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Min Dark",
+  "workbench.colorTheme": "Min Light",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.history": 0,
   "editor.tokenColorCustomizations": {
@@ -241,7 +234,6 @@
   },
   "yaml.keyOrdering": true,
   "yaml.validate": false,
-  "eslint.quiet": true,
   "workbench.editor.restoreViewState": false,
   "chat.agent.enabled": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
@@ -285,6 +277,19 @@
   "githubPullRequests.terminalLinksHandler": "github",
   "docker.extension.enableComposeLanguageServer": false,
   "github.copilot.nextEditSuggestions.enabled": true,
-  
+
+  "javascript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "eslint.debug": true,
+  "eslint.useRealpaths": true,
+  "postfix.languages": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "svelte",
+    "html"
+  ],
 
 }
