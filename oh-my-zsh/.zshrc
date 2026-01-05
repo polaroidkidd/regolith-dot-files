@@ -291,6 +291,14 @@ function __dprune() {
   echo "y" | docker network prune -a
 
 }
+# alias dcwipe='__dcwipe'
+alias dcrm='__dcrm'
+
+alias dwipe='__dwipe'
+alias dprune='__dprune'
+alias dkill='__dkill'
+alias dvipe='__dvipe'
+
 
 function __persist(){
 # Fail if any commands fails
@@ -349,13 +357,7 @@ function __loadImages(){
 
 alias dload='__loadImages'
 
-# alias dcwipe='__dcwipe'
-alias dcrm='__dcrm'
 
-alias dwipe='__dwipe'
-alias dprune='__dprune'
-alias dkill='__dkill'
-alias dvipe='__dvipe'
 
 # Silence warnings
 export NODE_NO_WARNINGS=1

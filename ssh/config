@@ -50,28 +50,34 @@ Host pi-local
     Port 8899
     IdentityFile /home/dle/.ssh/dle.xps@pi
 
-Host whatsin.fyi
-    HostName 157.180.75.93
-    User root
-    Port 22
-    IdentityFile /home/dle/.ssh/whatsin.root@hetzner
+
     
-Host db.whatsin.fyi
+Host whatsin.prod.fyi
     HostName 91.99.99.131
     User administrator
     Port 47899
     IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
-Host db-snapshot.whatsin.fyi
-    HostName 37.27.220.234
+Host whatsin.staging.fyi
+    HostName 167.235.247.80
     User administrator
     Port 47899
     IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
-Host coolify.admin
-    HostName 46.224.103.86
-    User root
-    IdentityFile /home/dle/.ssh/dle.hetzner@coolify.dle.dev
+Host netbird
+    HostName 135.181.94.123
+    User rootish
+    Port 47899
+    LocalForward 8080 localhost:80
+    IdentityFile /home/dle/.ssh/rootish@hetzner.dle.dev
+
+
+Host vpn
+    HostName 116.203.105.5
+    User rootish
+    Port 47899
+
+    IdentityFile /home/dle/.ssh/rootish@hetzner.dle.dev    
 
 Host coolify.apps
     HostName 135.181.94.123
