@@ -291,5 +291,6 @@
     "svelte",
     "html"
   ],
+  "chat.viewSessions.orientation": "stacked",
 
 }

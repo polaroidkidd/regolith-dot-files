@@ -124,7 +124,7 @@ plugins=(
   pnpm-shell-completion
   gcloud
   kubectl-autocomplete
-  fast-syntax-highlighting
+  
   kubectl
   oc
   mvn
@@ -147,7 +147,7 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi dle.whatsin@hetzner dle.hetzner@whatsin.fyi whatsin.root@hetzner 
+zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi dle.whatsin@hetzner rootish@hetzner.dle.dev dle.hetzner@coolify.dle.dev    
 zstyle :omz:plugins:ssh-agent lifetime
 zstyle :omz:plugins:nvm autoload true
 

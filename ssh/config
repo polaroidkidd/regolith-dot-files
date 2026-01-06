@@ -83,3 +83,8 @@ Host coolify.apps
     HostName 135.181.94.123
     User root
     IdentityFile /home/dle/.ssh/dle.hetzner@coolify.dle.dev
+
+
+Host *
+  IdentitiesOnly yes
+  PubKeyAuthentication yes
