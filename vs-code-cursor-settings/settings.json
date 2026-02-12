@@ -4,8 +4,7 @@
   "explorer.confirmDelete": false,
   "redhat.telemetry.enabled": false,
   "workbench.editorAssociations": {
-    "*.pdf": "pdf.preview",
-    "*.svg": "default"
+    "*.pdf": "pdf.preview"
   },
   "npm.enableRunFromFolder": true,
   "explorer.confirmDragAndDrop": false,
@@ -21,7 +20,7 @@
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports": "explicit"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -76,10 +75,14 @@
   "[dockercompose]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "postfix.customTemplates": [],
-  "git-autoconfig.configList": [
-    {}
+  "postfix.customTemplates": [
+    {
+      "name": "Info",
+      "body": "console.info('{{expr}}: ', {{expr}});",
+      "when": []
+    }
   ],
+  "git-autoconfig.configList": [{}],
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -190,107 +193,13 @@
       "ssh": "ssh://gitlab.ti8m.ch"
     }
   ],
-  "chat.mcp.serverSampling": {
-    "Cursor (Global): context7": {
-      "allowedModels": [
-        "copilot/gpt-4.1",
-        "copilot/claude-sonnet-4"
-      ]
-    }
-  },
-  "eslint.lintTask.enable": true,
-  "editor.fontSize": 13,
-  "workbench.editor.enablePreview": false,
-  "workbench.list.openMode": "doubleClick",
-  "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "eslint.probe": [
-    "astro",
-    "civet",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "mdx",
-    "vue",
-    "markdown",
-    "json",
-    "jsonc",
-    "svelte"
-  ],
-  "eslint.useESLintClass": true,
-
-  "chat.tools.terminal.autoApprove": {
-    "pnpm test --silent": {
-      "approve": true,
-      "matchCommandLine": true
-    },
-    "pnpm test --reporter verbose": {
-      "approve": true,
-      "matchCommandLine": true
-    }
-  },
-  "yaml.keyOrdering": true,
-  "yaml.validate": false,
-  "workbench.editor.restoreViewState": false,
-  "chat.agent.enabled": false,
+  "git.blame.editorDecoration.disableHover": true,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.ignoreWhitespace": true,
+  "claudeCode.preferredLocation": "panel",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "gitlab.duoCodeSuggestions.enabled": false,
-  "gitlab.duoChat.enabled": false,
-  "gitlab.duoAgentPlatform.enabled": false,
-  "gitlab.duoCodeSuggestions.enabledSupportedLanguages": {
-    "c": false,
-    "cpp": false,
-    "csharp": false,
-    "go": false,
-    "haml": false,
-    "handlebars": false,
-    "java": false,
-    "javascript": false,
-    "javascriptreact": false,
-    "kotlin": false,
-    "python": false,
-    "php": false,
-    "ruby": false,
-    "rust": false,
-    "scala": false,
-    "shellscript": false,
-    "sql": false,
-    "swift": false,
-    "typescript": false,
-    "typescriptreact": false,
-    "svelte": false,
-    "terraform": false,
-    "terragrunt": false,
-    "vue": false
-  },
-  "gitlab.duo.enabledWithoutGitlabProject": false,
-  "gitlab.duoCodeSuggestions.openTabsContext": false,
-  "gitlab.real-timeSecurityScan.scanFileOnSave": false,
-  "github.copilot.chat.languageContext.fix.typescript.enabled": true,
-  "github.copilot.chat.languageContext.inline.typescript.enabled": true,
-  "github.copilot.chat.languageContext.typescript.enabled": true,
-  "chat.editing.confirmEditRequestRemoval": false,
-  "githubPullRequests.pullBranch": "never",
-  "githubPullRequests.terminalLinksHandler": "github",
-  "docker.extension.enableComposeLanguageServer": false,
-  "github.copilot.nextEditSuggestions.enabled": true,
-
-  "javascript.suggest.completeFunctionCalls": true,
-  "typescript.suggest.completeFunctionCalls": true,
-  "eslint.debug": true,
-  "eslint.useRealpaths": true,
-  "postfix.languages": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-    "vue",
-    "svelte",
-    "html"
-  ],
-  "chat.viewSessions.orientation": "stacked",
-
+  "chat.disableAIFeatures": true,
+  "remote.SSH.experimental.chat": false,
+  "terminal.integrated.initialHint": false,
+  "editor.largeFileOptimizations": false
 }

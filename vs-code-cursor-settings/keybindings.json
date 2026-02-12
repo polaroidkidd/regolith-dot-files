@@ -152,18 +152,5 @@
         "key": "ctrl+shift+alt+i",
         "command": "-workbench.panel.chatEditing",
         "when": "workbench.panel.chat.view.edits.active"
-    },
-    {
-        "key": "ctrl+alt+[Equal]",
-        "command": "workbench.action.terminal.new"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "-cursor.composer.openAgentWindow",
-        "when": "cursor.appLayoutEnabled && cursor.appLayout != 'agent'"
-    },
-    {
-        "key": "shift+alt+p",
-        "command": "prettier.forceFormatDocument"
     }
 ]

@@ -179,6 +179,32 @@ autoload -Uz compinit && compinit -i
 # Disable Turbo Telemetry
 export TURBO_TELEMETRY_DISABLED=1
 export DO_NOT_TRACK=1
+function __git-url-copy() {
+    # Check if we're in a git repository                                                                                                                          
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+      echo "Error: Not a git repository" >&2                                                                                                                      
+      return 1    
+    fi
+
+    # Check if origin remote exists
+    if ! git remote | grep -q '^origin$'; then
+      echo "Error: Remote 'origin' is not configured" >&2
+      echo "Available remotes: $(git remote | tr '\n' ' ')" >&2
+      return 1
+    fi
+
+    local url
+    url=$(git remote get-url origin)
+
+    # Convert git@github.com:user/repo.git to https://github.com/user/repo
+    url=$(echo "$url" | sed -e 's|git@\([^:]*\):\(.*\)\.git|https://\1/\2|' -e 's|git@\([^:]*\):\(.*\)|https://\1/\2|' -e 's|\.git$||')
+
+    echo -n "$url" | xclip -sel clip
+    echo "Repository URL copied to clipboard: $url"
+  }
+
+alias gurl=__git-url-copy
+
 
 # Useful Git Commands
 alias gl="git log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%aN %Creset%s' --date=iso --graph --branches"
