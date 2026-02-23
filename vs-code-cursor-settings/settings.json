@@ -107,7 +107,7 @@
   "eslint.problems.shortenToSingleLine": true,
   "eslint.format.enable": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Min Light",
+  "workbench.colorTheme": "Min Dark",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.history": 0,
   "editor.tokenColorCustomizations": {
@@ -201,5 +201,12 @@
   "chat.disableAIFeatures": true,
   "remote.SSH.experimental.chat": false,
   "terminal.integrated.initialHint": false,
-  "editor.largeFileOptimizations": false
+  "editor.largeFileOptimizations": false,
+  "settingsSync.ignoredExtensions": [
+    "anthropic.claude-code"
+  ],
+  "docker.extension.enableComposeLanguageServer": false,
+  "workbench.tips.enabled": false,
+  "yaml.hoverAnchor": false,
+  "yaml.hover": false
 }

@@ -124,7 +124,7 @@ plugins=(
   pnpm-shell-completion
   gcloud
   kubectl-autocomplete
-  
+  netbird  
   kubectl
   oc
   mvn
@@ -219,7 +219,7 @@ alias gpa="git push --all"
 alias gpt="git push --follow-tags"
 alias gip="git pull --verbose"
 alias gbdo="git push --delete origin"
-alias cb="git branch --show-current | tr -d "\n" | xclip -sel clip"
+alias gbranch='git branch --show-current | tr -d "\n" | xclip -sel clip'
 alias gcmc=__gcmc
 fuction __gcmc(){
   git commit -m "`git symbolic-ref --short HEAD | grep -o -E '[A-Z]{3}-[0-9]{0,10}'`: $1"
@@ -690,3 +690,6 @@ export PATH="/home/dle/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 
+
+# opencode
+export PATH=/home/dle/.opencode/bin:$PATH
