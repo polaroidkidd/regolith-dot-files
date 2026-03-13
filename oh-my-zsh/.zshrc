@@ -205,6 +205,24 @@ function __git-url-copy() {
 
 alias gurl=__git-url-copy
 
+function __git-remote-copy() {
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+      echo "Error: Not a git repository" >&2
+      return 1
+    fi
+
+    if ! git remote | grep -q '^origin$'; then
+      echo "Error: Remote 'origin' is not configured" >&2
+      echo "Available remotes: $(git remote | tr '\n' ' ')" >&2
+      return 1
+    fi
+
+    local url
+    url=$(git remote get-url origin)
+    echo -n "$url" | xclip -sel clip
+    echo "Remote URL copied to clipboard: $url"
+}
+alias gremote=__git-remote-copy
 
 # Useful Git Commands
 alias gl="git log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%aN %Creset%s' --date=iso --graph --branches"

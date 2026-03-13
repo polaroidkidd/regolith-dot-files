@@ -1,4 +1,8 @@
 {
+  "files.watcherExclude": {
+    "**/volumes": true,
+    "**/node_modules": true,
+  },
   "explorer.autoReveal": false,
   "security.workspace.trust.untrustedFiles": "newWindow",
   "explorer.confirmDelete": false,
@@ -19,8 +23,8 @@
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -82,7 +86,9 @@
       "when": []
     }
   ],
-  "git-autoconfig.configList": [{}],
+  "git-autoconfig.configList": [
+    {}
+  ],
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -107,7 +113,7 @@
   "eslint.problems.shortenToSingleLine": true,
   "eslint.format.enable": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Min Dark",
+  "workbench.colorTheme": "Min Light",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.history": 0,
   "editor.tokenColorCustomizations": {
@@ -208,5 +214,9 @@
   "docker.extension.enableComposeLanguageServer": false,
   "workbench.tips.enabled": false,
   "yaml.hoverAnchor": false,
-  "yaml.hover": false
+  "yaml.hover": false,
+  "files.trimTrailingWhitespaceInRegexAndStrings": false,
+  "workbench.editor.restoreViewState": false,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnSave": true
 }

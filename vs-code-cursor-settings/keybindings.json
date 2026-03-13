@@ -1,6 +1,14 @@
 // Place your key bindings in this file to override the defaults
 [
     {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b\r"
+        }
+    },
+    {
         "key": "alt+1",
         "command": "workbench.view.explorer"
     },
@@ -126,7 +134,7 @@
         "when": "terminalFindVisible && terminalHasBeenCreated || terminalFindVisible && terminalProcessSupported"
     },
     {
-        "key": "alt+w",
+        "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor"
     },
     {
@@ -152,5 +160,18 @@
         "key": "ctrl+shift+alt+i",
         "command": "-workbench.panel.chatEditing",
         "when": "workbench.panel.chat.view.edits.active"
+    },
+    {
+        "key": "ctrl+shift+[Equal]",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "-workbench.action.zoomIn"
     }
 ]

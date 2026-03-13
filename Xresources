@@ -1,3 +1,206 @@
 i3-wm.program.unclutter: :
-!regolith.look.path: /usr/share/regolith-look/catppuccin
-regolith.look.path: /usr/share/regolith-look/nord
+! regolith.look.path: /usr/share/regolith-look/nord
+
+! --------------------------------------------
+! -- This file is in the Xresource file format
+! --------------------------------------------
+
+! --------------------------------------------
+! -- Look name
+! --------------------------------------------
+
+regolith.look: nord
+
+! --------------------------------------------
+! -- Wallpaper 
+! --------------------------------------------
+
+! -- Specify either a complete file path to an image
+
+regolith.wallpaper.file: /usr/share/regolith-look/nord/nord-regolith2-noText-GMFranceschini.svg
+regolith.wallpaper.options: zoom
+
+!-- *Or* specify a color
+
+regolith.wallpaper.color.primary:
+
+!-- If specifying a primary color, optional additional settings
+
+regolith.wallpaper.color.secondary:
+regolith.wallpaper.color.shading.type: 
+
+! --------------------------------------------
+! -- Lockscreen Wallpaper 
+! --------------------------------------------
+
+!-- the following keys can be set to specify the lockscreen background, as above with desktop wallpaper
+
+! -- Specify either a complete file path to an image
+! -- and (optionally) options how to display the file
+
+regolith.lockscreen.wallpaper.file: /usr/share/regolith-look/nord/nord-dark.png
+regolith.lockscreen.wallpaper.options: zoom
+
+!-- *Or* specify a color
+
+regolith.lockscreen.wallpaper.color.primary:
+
+!-- If specifying a primary color, optional additional settings
+
+regolith.lockscreen.wallpaper.color.secondary:
+regolith.lockscreen.wallpaper.color.shading.type:
+
+! --------------------------------------------
+! -- Theme elements
+! --------------------------------------------
+
+gtk.theme_name: Nordic
+gtk.icon_theme_name: Arc
+
+! --------------------------------------------
+! -- Compositor Config
+! --------------------------------------------
+
+regolith.compositor.picom.config: /usr/share/regolith-look/nord/picom.conf
+! -- Other compositor configs may be specified as desired:
+! -- regolith.compositor.compton.config
+
+! --------------------------------------------
+! -- Fonts
+! --------------------------------------------
+
+#define gtk_font_name RobotoMono Nerd Font 12
+#define gtk_document_font_name Sans 12
+#define gtk_monospace_font_name RobotoMono Nerd Font 12
+
+gtk.font_name: gtk_font_name
+gtk.document_font_name: gtk_document_font_name
+gtk.monospace_font_name: gtk_monospace_font_name
+
+! --------------------------------------------
+! -- Colors
+! --------------------------------------------
+
+! Nord colors
+#define color_base03   #2E3440
+#define color_base02   #3B4252
+#define color_base01   #434C5E
+#define color_base00   #7B8394
+#define color_base0    #D8DEE9
+#define color_base1    #E5E9F0
+#define color_base2    #ECEFF4
+#define color_base3    #ECEFF4
+#define color_yellow   #EBCB8B
+#define color_orange   #D08770
+#define color_red      #BF616A
+#define color_magenta  #5E81AC
+#define color_violet   #B48EAD
+#define color_blue     #5E81AC
+#define color_cyan     #88C0D0
+#define color_green    #A3BE8C
+#define color_nord4    #4C566A
+#define focused        #ff8800
+	
+
+! --------------------------------------------
+! -- Component resources
+! --------------------------------------------
+
+#include "/usr/share/regolith-look/nord/i3xrocks"
+! -- #include "/usr/share/regolith-look/nord/wm"
+#include "/usr/share/regolith-look/nord/gnome-terminal"
+
+! --------------------------------------------
+! -- Loader Path - Path to script responsible 
+! -- for configuring UI from Xres values
+! --------------------------------------------
+
+
+
+#define i3wm_window_border_style         pixel
+#define i3wm_floatingwindow_border_style pixel
+#define i3wm_window_border_size          3
+#define i3wm_floatingwindow_border_size  3
+#define i3wm_gaps_inner_size             5
+#define i3wm_gaps_outer_size             0
+#define i3wm_bar_position                bottom
+
+#define Q(x) #x
+#define QUOTE(x) Q(x)
+#define glyph typeface_bar_glyph_workspace
+
+ilia.stylesheet: /usr/share/regolith-look/nord/ilia.css
+
+wm.bar.font: gtk_monospace_font_name
+wm.bar.position: i3wm_bar_position
+wm.bar.background.color: color_base03
+wm.bar.statusline.color: color_base1
+wm.bar.separator.color: color_blue
+wm.bar.workspace.focused.border.color: color_base02
+wm.bar.workspace.focused.background.color: color_base02
+wm.bar.workspace.focused.text.color: color_base2
+wm.bar.workspace.active.border.color: color_base02
+wm.bar.workspace.active.background.color: color_base02
+wm.bar.workspace.active.text.color: color_base00
+wm.bar.workspace.inactive.border.color: color_base03
+wm.bar.workspace.inactive.background.color: color_base03
+wm.bar.workspace.inactive.text.color: color_base00
+wm.bar.workspace.urgent.border.color: color_red
+wm.bar.workspace.urgent.background.color: color_red
+wm.bar.workspace.urgent.text.color: color_base3
+
+wm.client.focused.color.border: color_base03
+wm.client.focused.color.background: color_base01
+wm.client.focused.color.text: color_base3
+wm.client.focused.color.indicator: color_blue
+wm.client.focused.color.child_border: color_nord4
+
+wm.client.focused_inactive.color.border: color_base01
+wm.client.focused_inactive.color.background: color_base03
+wm.client.focused_inactive.color.text: color_base00
+wm.client.focused_inactive.color.indicator: color_base02
+wm.client.focused_inactive.color.child_border: color_base03
+
+wm.client.unfocused.color.border: color_base01
+wm.client.unfocused.color.background: color_base03
+wm.client.unfocused.color.text: color_base00
+wm.client.unfocused.color.indicator: color_base02
+wm.client.unfocused.color.child_border: color_base03
+
+wm.client.urgent.color.border: color_base03
+wm.client.urgent.color.background: color_red
+wm.client.urgent.color.text: color_base3
+wm.client.urgent.color.indicator: color_red
+wm.client.urgent.color.child_border: color_base03
+
+wm.window.border.style: i3wm_window_border_style
+wm.window.border.size: i3wm_window_border_size
+wm.floatingwindow.border.style: i3wm_floatingwindow_border_style
+wm.floatingwindow.border.size: i3wm_floatingwindow_border_size
+wm.gaps.inner.size: i3wm_gaps_inner_size
+wm.gaps.outer.size: i3wm_gaps_outer_size
+
+#define WORKSPACE_NAME(INDEX, COLOR, GLYPH) INDEX:<span> </span>INDEX <span foreground=COLOR>GLYPH</span><span> </span>
+
+wm.workspace.01.name: WORKSPACE_NAME(1, QUOTE(color_blue), glyph)
+wm.workspace.02.name: WORKSPACE_NAME(2, QUOTE(color_cyan), glyph)
+wm.workspace.03.name: WORKSPACE_NAME(3, QUOTE(color_green), glyph)
+wm.workspace.04.name: WORKSPACE_NAME(4, QUOTE(color_yellow), glyph)
+wm.workspace.05.name: WORKSPACE_NAME(5, QUOTE(color_orange), glyph)
+wm.workspace.06.name: WORKSPACE_NAME(6, QUOTE(color_red), glyph)
+wm.workspace.07.name: WORKSPACE_NAME(7, QUOTE(color_magenta), glyph)
+wm.workspace.08.name: WORKSPACE_NAME(8, QUOTE(color_violet), glyph)
+wm.workspace.09.name: WORKSPACE_NAME(9, QUOTE(color_base00), glyph)
+wm.workspace.10.name: WORKSPACE_NAME(10, QUOTE(color_blue), glyph)
+wm.workspace.11.name: WORKSPACE_NAME(11, QUOTE(color_cyan), glyph)
+wm.workspace.12.name: WORKSPACE_NAME(12, QUOTE(color_green), glyph)
+wm.workspace.13.name: WORKSPACE_NAME(13, QUOTE(color_yellow), glyph)
+wm.workspace.14.name: WORKSPACE_NAME(14, QUOTE(color_orange), glyph)
+wm.workspace.15.name: WORKSPACE_NAME(15, QUOTE(color_red), glyph)
+wm.workspace.16.name: WORKSPACE_NAME(16, QUOTE(color_magenta), glyph)
+wm.workspace.17.name: WORKSPACE_NAME(17, QUOTE(color_violet), glyph)
+wm.workspace.18.name: WORKSPACE_NAME(18, QUOTE(color_base00), glyph)
+wm.workspace.19.name: WORKSPACE_NAME(19, QUOTE(color_blue), glyph)
+
+
+regolith.look.loader: /usr/share/regolith-look/default_loader.sh
