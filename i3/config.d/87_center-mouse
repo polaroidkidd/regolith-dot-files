@@ -1,0 +1,2 @@
+## Launch // Center mouse on focused window ##
+exec_always --no-startup-id ~/.config/regolith3/i3/utils/i3-center-mouse.py --all

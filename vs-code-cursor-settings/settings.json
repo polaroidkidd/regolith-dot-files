@@ -155,7 +155,6 @@
   },
   "editor.accessibilitySupport": "off",
   "extensions.ignoreRecommendations": true,
-  "update.showReleaseNotes": false,
   "prisma.showPrismaDataPlatformNotification": false,
   "github.copilot.editor.enableAutoCompletions": true,
   "git.autofetch": true,
