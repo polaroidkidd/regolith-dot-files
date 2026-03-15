@@ -50,12 +50,12 @@
 
 # Specify the distance between windows in pixels. (i3-gaps)
 set_from_resource $wm.gaps.inner.size i3-wm.gaps.inner.size 5
-set_from_resource $wm.gaps.outer.size i3-wm.gaps.outer.size 0
+set_from_resource $wm.gaps.outer.size i3-wm.gaps.outer.size 5
 gaps inner $wm.gaps.inner.size
 gaps outer $wm.gaps.outer.size
 
-# Only enable gaps on a workspace when there is at least one container
-set_from_resource $wm.gaps.smart i3-wm.gaps.smart on
+# Keep outer gaps even when a workspace only has a single window.
+set_from_resource $wm.gaps.smart i3-wm.gaps.smart off
 smart_gaps $wm.gaps.smart
 
 focus_wrapping no
