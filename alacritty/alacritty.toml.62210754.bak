@@ -20,8 +20,3 @@ import = [
 ]
 
 
-
-[[keyboard.bindings]]
-key = "Return"
-mods = "Shift"
-chars = "\u001B\r"
