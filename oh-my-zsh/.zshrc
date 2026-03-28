@@ -711,3 +711,10 @@ export PATH="/home/dle/.rd/bin:$PATH"
 
 # opencode
 export PATH=/home/dle/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/dle/.bun/_bun" ] && source "/home/dle/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

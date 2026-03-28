@@ -14,7 +14,7 @@
   "explorer.confirmDragAndDrop": false,
   "editor.unicodeHighlight.invisibleCharacters": false,
   "[svelte]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "eslint.validate": [
     "javascript",
@@ -23,17 +23,16 @@
     "typescriptreact"
   ],
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
-    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "svelte.plugin.svelte.defaultScriptLanguage": "ts",
   "svelte.enable-ts-plugin": true,
   "editor.minimap.enabled": false,
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -42,7 +41,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -51,7 +50,7 @@
   "terminal.integrated.allowMnemonics": true,
   "window.enableMenuBarMnemonics": false,
   "[scss]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "xml.server.vmargs": "-Xmx128M",
   "[shellscript]": {
@@ -62,7 +61,7 @@
     "editor.defaultFormatter": "raynigon.nginx-formatter"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "files.autoSave": "afterDelay",
   "editor.suggest.localityBonus": true,
@@ -71,7 +70,7 @@
   "git.openRepositoryInParentFolders": "never",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[vue]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "playwright.reuseBrowser": false,
   "playwright.showTrace": false,
@@ -113,7 +112,7 @@
   "eslint.problems.shortenToSingleLine": true,
   "eslint.format.enable": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Min Light",
+  "workbench.colorTheme": "VS Code Light",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.history": 0,
   "editor.tokenColorCustomizations": {
@@ -151,10 +150,11 @@
   },
   "editor.defaultColorDecorators": "auto",
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "editor.accessibilitySupport": "off",
   "extensions.ignoreRecommendations": true,
+  "update.showReleaseNotes": false,
   "prisma.showPrismaDataPlatformNotification": false,
   "github.copilot.editor.enableAutoCompletions": true,
   "git.autofetch": true,
@@ -169,7 +169,6 @@
   "scm.diffDecorationsGutterPattern": {
     "added": true
   },
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "[mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -198,7 +197,6 @@
       "ssh": "ssh://gitlab.ti8m.ch"
     }
   ],
-  "git.blame.editorDecoration.disableHover": true,
   "git.blame.editorDecoration.enabled": true,
   "git.blame.ignoreWhitespace": true,
   "claudeCode.preferredLocation": "panel",
@@ -215,7 +213,8 @@
   "yaml.hoverAnchor": false,
   "yaml.hover": false,
   "files.trimTrailingWhitespaceInRegexAndStrings": false,
+  "editor.formatOnSave": true,
   "workbench.editor.restoreViewState": false,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
-  "editor.formatOnSave": true
+  "hediet.vscode-drawio.resizeImages": null,
+  "diffEditor.ignoreTrimWhitespace": false
 }
