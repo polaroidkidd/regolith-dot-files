@@ -15,10 +15,7 @@ family = "monospace"
 family = "monospace"
 
 [general]
-import = [
-    "~/.config/alacritty/themes/themes/doom_one.toml"
-]
-
+import = ["~/.config/alacritty/themes/themes/dracula.toml"]
 
 
 [[keyboard.bindings]]
