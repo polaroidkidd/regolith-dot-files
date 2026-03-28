@@ -1,10 +1,10 @@
 Host cassandra
-    HostName 2a02:16b:5207:0:2d8:61ff:fefc:ddc
+    HostName 2a02:16b:520e:0:2d8:61ff:fefc:ddc
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
     LocalForward 8000 localhost:8000 # dozzle
-    LocalForward 8001 localhost:8200 # duplicati
+    LocalForward 8200 localhost:8200 # duplicati
     LocalForward 8002 localhost:8002 # scruteny
     LocalForward 8004 localhost:8004 # influxdb admin
     LocalForward 8005 localhost:8005 #
@@ -19,19 +19,20 @@ Host cassandra-local
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
     LocalForward 8000 localhost:8000
-    LocalForward 8001 localhost:8200
+    LocalForward 8200 localhost:8200
     LocalForward 8002 localhost:8002
     LocalForward 8004 localhost:8004
     LocalForward 8005 localhost:8005
     LocalForward 8006 localhost:8080
     LocalForward 8007 localhost:9705
 
-Host github
+Host github.com
     HostName github.com
     User git
     Port 22
     IdentityFile /home/dle/.ssh/dle@github.com
-
+    IdentitiesOnly yes
+    PubKeyAuthentication yes
 Host gitlab.ti8m.ch
     HostName gitlab.ti8m.ch
     User git
