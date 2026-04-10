@@ -1,0 +1,7 @@
+# Vibrant focused border color that stays visible on both dark and light looks.
+client.focused          #ff5f00 #ff5f00 #111111 #ff5f00 #ff5f00
+client.focused_inactive #6b7280 #6b7280 #ffffff #6b7280 #6b7280
+client.unfocused        #9ca3af #9ca3af #111111 #9ca3af #9ca3af
+client.urgent           #d73a49 #d73a49 #ffffff #d73a49 #d73a49
+client.placeholder      #9ca3af #9ca3af #111111 #9ca3af #9ca3af
+client.background       #111111

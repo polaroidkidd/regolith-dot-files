@@ -242,6 +242,22 @@ alias gcmc=__gcmc
 fuction __gcmc(){
   git commit -m "`git symbolic-ref --short HEAD | grep -o -E '[A-Z]{3}-[0-9]{0,10}'`: $1"
 }
+# Git worktree aliases
+alias gwl='git worktree list'
+alias gwa='git worktree add'
+alias gwab='git worktree add -b'
+alias gwr='git worktree remove'
+alias gwrf='git worktree remove --force'
+alias gwp='git worktree prune'
+alias gwm='git worktree move'
+alias gwlk='git worktree lock'
+alias gwulk='git worktree unlock'
+
+function __gwgo() {
+  git worktree add "$1" && cd "$1"
+}
+alias gwgo='__gwgo'
+
 # core git editor
 export GIT_EDITOR=vim
 
@@ -718,3 +734,6 @@ export PATH=/home/dle/.opencode/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
