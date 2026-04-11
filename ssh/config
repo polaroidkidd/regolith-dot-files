@@ -3,7 +3,7 @@ Host cassandra
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
-    LocalForward 8000 localhost:8000 # dozzle
+    LocalForward 8000 localhost:8080 # dozzle
     LocalForward 8200 localhost:8200 # duplicati
     LocalForward 8002 localhost:8002 # scruteny
     LocalForward 8004 localhost:8004 # influxdb admin
@@ -18,7 +18,7 @@ Host cassandra-local
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra
-    LocalForward 8000 localhost:8000
+    LocalForward 8000 localhost:8080
     LocalForward 8200 localhost:8200
     LocalForward 8002 localhost:8002
     LocalForward 8004 localhost:8004

@@ -120,7 +120,6 @@ plugins=(
   zsh-autosuggestions
   sudo
   safe-paste
-  nvm
   pnpm-shell-completion
   gcloud
   kubectl-autocomplete
@@ -149,7 +148,7 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi dle.whatsin@hetzner rootish@hetzner.dle.dev dle.hetzner@coolify.dle.dev    
 zstyle :omz:plugins:ssh-agent lifetime
-zstyle :omz:plugins:nvm autoload true
+
 
 
 
@@ -649,7 +648,6 @@ source ~/.envs/.all.sh
 # source <(doctl completion zsh)
 # eval $(~/.linuxbrew/bin/brew shellenv)
 
-export PATH="$(yarn global bin):$PATH"
 export JAVA_HOME=/home/dle/.sdkman/candidates/java/current/bin/java
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -665,30 +663,7 @@ alias rs="/home/dle/.config/regolith3/rs.sh"
 
 alias files="nautilus . & disonw"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # Kill Forticlient
 alias startforti="/home/dle/DevTools/forticlient-sctipts/restart-forticlient.sh"

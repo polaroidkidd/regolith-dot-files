@@ -109,7 +109,7 @@
   "eslint.problems.shortenToSingleLine": true,
   "eslint.format.enable": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Min Dark",
+  "workbench.colorTheme": "Min Light",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.history": 0,
   "editor.tokenColorCustomizations": {
