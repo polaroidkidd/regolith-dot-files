@@ -112,7 +112,9 @@ export COREPACK_ENABLE_AUTO_PIN=0
 # https://stackoverflow.com/questions/71519436/the-terminal-process-usr-bin-zsh-terminated-with-exit-code-14
 export TMOUT=0
 # Add wisely, as too many plugins slow down shell startup.
+zstyle ':omz:plugins:nvm' autoload yes
 plugins=(
+  nvm
   z
   git
   ssh-agent
@@ -127,6 +129,7 @@ plugins=(
   kubectl
   oc
   mvn
+
   # zsh-pyenv
   # zsh-autocomplete
 )
@@ -142,9 +145,9 @@ pasteinit() {
 pastefinish() {
   zle -N self-insert $OLD_SELF_INSERT
 }
+
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
-
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities dle@cassandra dle@github.com dle@gitlab.ti8m.ch dle.xps@pi dle.whatsin@hetzner rootish@hetzner.dle.dev dle.hetzner@coolify.dle.dev    
 zstyle :omz:plugins:ssh-agent lifetime
@@ -709,6 +712,3 @@ export PATH=/home/dle/.opencode/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
