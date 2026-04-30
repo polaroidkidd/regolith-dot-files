@@ -173,5 +173,9 @@
     {
         "key": "ctrl+shift+0",
         "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
     }
 ]

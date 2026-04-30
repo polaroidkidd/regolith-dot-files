@@ -86,9 +86,6 @@
     }
   ],
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
@@ -214,4 +211,7 @@
   "workbench.editor.restoreViewState": false,
   "hediet.vscode-drawio.resizeImages": null,
   "diffEditor.ignoreTrimWhitespace": false,
+  "files.associations": {
+    "*.css": "css"
+  },
 }

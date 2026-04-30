@@ -255,6 +255,8 @@ alias gwm='git worktree move'
 alias gwlk='git worktree lock'
 alias gwulk='git worktree unlock'
 
+
+alias ks="k9s"
 function __gwgo() {
   git worktree add "$1" && cd "$1"
 }
