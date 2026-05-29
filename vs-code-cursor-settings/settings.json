@@ -204,8 +204,6 @@
   ],
   "docker.extension.enableComposeLanguageServer": false,
   "workbench.tips.enabled": false,
-  "yaml.hoverAnchor": false,
-  "yaml.hover": false,
   "files.trimTrailingWhitespaceInRegexAndStrings": false,
   "editor.formatOnSave": true,
   "workbench.editor.restoreViewState": false,
@@ -214,4 +212,12 @@
   "files.associations": {
     "*.css": "css"
   },
+  "GitLink.hostType": "gitlab",
+  "markdown-preview-enhanced.revealjsTheme": "none.css",
+  "markdown-preview-enhanced.codeBlockTheme": "vs.css",
+  "yaml.extension.recommendations": false,
+  "yaml.format.bracketSpacing": false,
+  "yaml.format.enable": false,
+  "yaml.format.trailingComma": false,
+  "yaml.validate": false,
 }

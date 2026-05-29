@@ -93,10 +93,6 @@
         "command": "workbench.action.increaseViewSize"
     },
     {
-        "key": "ctrl+shift+alt+e",
-        "command": "workbench.files.action.showActiveFileInExplorer"
-    },
-    {
         "key": "ctrl+shift+i",
         "command": "-supermaven.addToChat"
     },
@@ -177,5 +173,9 @@
     {
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+shift+e e",
+        "command": "workbench.files.action.showActiveFileInExplorer"
     }
 ]

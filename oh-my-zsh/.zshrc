@@ -1,3 +1,4 @@
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # https://github.com/zsh-users/zsh-completions?tab=readme-ov-file#using-zsh-frameworks
@@ -576,7 +577,7 @@ function __tks(){
 }
 
 function __tas(){
-  tmux attach-session -t ${1}
+  tmux attach-session -t ${1} 2>/dev/null || tmux new-session -s ${1}
 }
 
 function __tkill(){
