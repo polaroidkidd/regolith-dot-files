@@ -1,5 +1,5 @@
 Host cassandra
-    HostName 85.195.231.16
+    HostName 85.195.231.21
     User dle
     Port 29376
     IdentityFile /home/dle/.ssh/dle@cassandra

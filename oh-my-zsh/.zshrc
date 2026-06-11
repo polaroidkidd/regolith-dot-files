@@ -240,7 +240,8 @@ alias gpa="git push --all"
 alias gpt="git push --follow-tags"
 alias gip="git pull --verbose"
 alias gbdo="git push --delete origin"
-alias gbranch='git branch --show-current | tr -d "\n" | xclip -sel clip'
+alias gbc='git branch --show-current | tr -d "\n" | xclip -sel clip'
+alias gb='git branch --show-current'
 alias gcmc=__gcmc
 fuction __gcmc(){
   git commit -m "`git symbolic-ref --short HEAD | grep -o -E '[A-Z]{3}-[0-9]{0,10}'`: $1"
@@ -622,6 +623,8 @@ alias gimmepublicip='curl ipinfo.io/ip | xclip -sel clip'
 # ranger exit in directory
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
+alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+alias light="gsettings reset org.gnome.desktop.interface color-scheme"
 #####################################################
 ################ BEGIN  PATHS #######################
 #####################################################
