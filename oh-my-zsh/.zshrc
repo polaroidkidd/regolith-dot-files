@@ -450,6 +450,16 @@ function __deleteNodeModulesOutsideNestedWorktrees(){
   find . "${find_prunes[@]}" -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
 }
 
+function __nodeOnlyClean(){
+  GREEN=`tput setaf 2`
+  RESET=`tput sgr0`
+  BOLD=$(tput bold)
+
+  echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
+  __deleteNodeModulesOutsideNestedWorktrees
+  wait
+}
+
 function __nodeWipeInstall(){
   RED=`tput setaf 1`
   GREEN=`tput setaf 2`
@@ -560,6 +570,7 @@ function __nodeCleanInstall(){
 }
 alias nci="__nodeCleanInstall"
 alias nwi="__nodeWipeInstall"
+alias noc="__nodeOnlyClean"
 # pnpm alias
 alias pn=pnpm
 # CDK
