@@ -247,15 +247,14 @@ fuction __gcmc(){
   git commit -m "`git symbolic-ref --short HEAD | grep -o -E '[A-Z]{3}-[0-9]{0,10}'`: $1"
 }
 # Git worktree aliases
-alias gwl='git worktree list'
-alias gwa='git worktree add'
-alias gwab='git worktree add -b'
-alias gwr='git worktree remove'
-alias gwrf='git worktree remove --force'
-alias gwp='git worktree prune'
-alias gwm='git worktree move'
-alias gwlk='git worktree lock'
-alias gwulk='git worktree unlock'
+alias gwtl='git worktree list'
+alias gwta='git worktree add'
+alias gwtab='git worktree add -b'
+alias gwtrm='git worktree remove'
+alias gwtprune='git worktree prune'
+alias gwtmv='git worktree move'
+alias gwtlk='git worktree lock'
+alias gwtulk='git worktree unlock'
 
 
 alias ks="k9s"
@@ -427,6 +426,30 @@ alias dload='__loadImages'
 
 # Silence warnings
 export NODE_NO_WARNINGS=1
+function __deleteNodeModulesOutsideNestedWorktrees(){
+  local current_path="${PWD:A}"
+  local worktree_path relative_worktree_path
+  local find_prunes=()
+
+  while IFS= read -r line; do
+    if [[ "$line" == worktree\ * ]]; then
+      worktree_path="${line#worktree }"
+      worktree_path="${worktree_path:A}"
+
+      if [[ "$worktree_path" == "$current_path" ]]; then
+        continue
+      fi
+
+      if [[ "$worktree_path" == "$current_path"/* ]]; then
+        relative_worktree_path="./${worktree_path#$current_path/}"
+        find_prunes+=( -path "$relative_worktree_path" -prune -o )
+      fi
+    fi
+  done < <(git worktree list --porcelain 2>/dev/null)
+
+  find . "${find_prunes[@]}" -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+}
+
 function __nodeWipeInstall(){
   RED=`tput setaf 1`
   GREEN=`tput setaf 2`
@@ -434,7 +457,7 @@ function __nodeWipeInstall(){
   BOLD=$(tput bold)
   if [[ -f "${PWD}/package-lock.json" || -f "${PWD}/yarn.lock" || -f "${PWD}/pnpm-lock.yaml" ]]; then
     echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
-    find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+    __deleteNodeModulesOutsideNestedWorktrees
     wait
 
     if [[ -f "${PWD}/package-lock.json" ]]; then
@@ -496,7 +519,7 @@ function __nodeCleanInstall(){
   BOLD=$(tput bold)
   if [[ -f "${PWD}/package-lock.json" || -f "${PWD}/yarn.lock" || -f "${PWD}/pnpm-lock.yaml" ]]; then
     echo -e "${BOLD}${GREEN}*************** DELETING NODE_MODULES *******************${RESET}"
-    find . -name "node_modules" -type d -prune -print -exec rm -rf "{}" \;
+    __deleteNodeModulesOutsideNestedWorktrees
 
     wait
     if [[ -f "${PWD}/package-lock.json" ]]; then

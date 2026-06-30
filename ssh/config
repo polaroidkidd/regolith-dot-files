@@ -61,12 +61,14 @@ Host whatsin.db
     HostName 91.99.99.131
     User administrator
     Port 47899
+    LocalForward 5432 localhost:5432 # PostgreSQL production
     IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
 Host whatsin.staging.db
     HostName 167.235.247.80
     User administrator
     Port 47899
+    LocalForward 5433 localhost:5432 # PostgreSQL staging
     IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
 Host coolify.control-center
