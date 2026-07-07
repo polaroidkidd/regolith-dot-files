@@ -3,3 +3,4 @@ i3-wm.program.unclutter: :
 !regolith.look.path: /usr/share/regolith-look/catppuccin
 regolith.look.path: /usr/share/regolith-look/gruvbox
 wm.bar.position: bottom
+Xft.dpi: 110
