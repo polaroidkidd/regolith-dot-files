@@ -227,6 +227,14 @@ function __git-remote-copy() {
 }
 alias gremote=__git-remote-copy
 
+__regolith_zshrc_dir="${${(%):-%N}:A:h}"
+if [[ -r "$__regolith_zshrc_dir/git-clean.zsh" ]]; then
+  source "$__regolith_zshrc_dir/git-clean.zsh"
+fi
+unset __regolith_zshrc_dir
+
+alias gclean=__git-clean
+
 # Useful Git Commands
 alias gl="git log --pretty=format:'%Cred%h %Cgreen%ad %Cblue%aN %Creset%s' --date=iso --graph --branches"
 alias gall="git add --all"
