@@ -249,4 +249,18 @@
   "workbench.preferredLightColorTheme": "Min Light",
   "window.autoDetectColorScheme": true,
   "fallow.audit.gate": "all",
+  "explorer.confirmPasteNative": false,
+  "json.schemaDownload.trustedDomains": {
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://turborepo.org": true,
+    "https://www.schemastore.org/": true
+  },
+  "git.blame.statusBarItem.enabled": true,
+  "eslint.useESLintClass": true,
+  "eslint.useRealpaths": true,
 }
