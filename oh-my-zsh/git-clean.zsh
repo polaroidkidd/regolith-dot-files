@@ -217,7 +217,7 @@ function __git-clean() {
     done
 
     if [[ "$assume_yes" != true ]]; then
-      if [[ ! -r /dev/tty ]]; then
+      if ! { : < /dev/tty } 2>/dev/null; then
         __gclean_error "local deletion requires a terminal confirmation"
         return 1
       fi
@@ -258,5 +258,61 @@ function __git-clean() {
     return 0
   fi
 
-  print -- "No remote cleanup candidates."
+  local -a remote_candidates remote_deleted remote_failed
+  while IFS= read -r branch; do
+    [[ -z "$branch" ]] && continue
+    [[ "$branch" == HEAD ]] && continue
+    [[ "$branch" == "$default_branch" ]] && continue
+
+    if __gclean_is_protected_branch "$branch" "${protected_patterns[@]}"; then
+      continue
+    fi
+
+    remote_candidates+=("$branch")
+  done < <(git for-each-ref --merged "refs/remotes/origin/${default_branch}" --format='%(refname:strip=3)' refs/remotes/origin)
+
+  if (( ${#remote_candidates[@]} == 0 )); then
+    print -- "No remote cleanup candidates."
+    return 0
+  fi
+
+  print -- "Remote cleanup candidates:"
+  for branch in "${remote_candidates[@]}"; do
+    print -- "  ${branch}"
+  done
+
+  if ! { : < /dev/tty } 2>/dev/null; then
+    __gclean_error "remote deletion requires terminal confirmation"
+    return 1
+  fi
+
+  local remote_answer
+  print -n -- "Type 'delete remote branches' to delete these remote branches: " > /dev/tty
+  read -r remote_answer < /dev/tty
+  if [[ "$remote_answer" != "delete remote branches" ]]; then
+    print -- "Remote deletion skipped."
+    return 0
+  fi
+
+  for branch in "${remote_candidates[@]}"; do
+    if git push origin --delete -- "$branch"; then
+      remote_deleted+=("$branch")
+    else
+      remote_failed+=("$branch")
+    fi
+  done
+
+  if (( ${#remote_deleted[@]} > 0 )); then
+    print -- "Deleted remote branches:"
+    for branch in "${remote_deleted[@]}"; do
+      print -- "  ${branch}"
+    done
+  fi
+
+  if (( ${#remote_failed[@]} > 0 )); then
+    print -- "Failed remote deletions:"
+    for branch in "${remote_failed[@]}"; do
+      print -- "  ${branch}"
+    done
+  fi
 }
