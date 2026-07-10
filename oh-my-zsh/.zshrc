@@ -264,8 +264,8 @@ alias gwtmv='git worktree move'
 alias gwtlk='git worktree lock'
 alias gwtulk='git worktree unlock'
 
-
-alias ks="k9s"
+# Netbird 
+alias nb="netbird"
 function __gwgo() {
   git worktree add "$1" && cd "$1"
 }
