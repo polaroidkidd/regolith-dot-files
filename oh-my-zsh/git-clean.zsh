@@ -232,7 +232,7 @@ function __git-clean() {
     fi
 
     for branch in "${candidates[@]}"; do
-      if git branch -d -- "$branch"; then
+      if git branch -D -- "$branch"; then
         deleted+=("$branch")
       else
         failed+=("$branch")

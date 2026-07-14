@@ -154,3 +154,4 @@ for_window [title="splash" ] floating enable
 for_window [title=".*Google Chrome for Testing.*" ] floating enable
 for_window [title=".*Speech Note.*" ] floating enable
 for_window [title=".*Calculator.*" ] floating enable
+for_window [title=".*ONEPLUS.*" ] floating enable
