@@ -135,6 +135,9 @@ plugins=(
   # zsh-autocomplete
 )
 
+# Keep autosuggestions readable against dark terminal themes.
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#879092'
+
 
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238
@@ -726,7 +729,6 @@ export STARSHIP_CONFIG=/home/dle/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
 export NODE_OPTIONS="--max_old_space_size=16384"
-export TERM=xterm-256color
 export ICAROOT="/home/dle/DevTools/citrix"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
