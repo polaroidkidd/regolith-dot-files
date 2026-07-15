@@ -669,7 +669,7 @@ alias gimmepublicip='curl ipinfo.io/ip | xclip -sel clip'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 alias dark="gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
-alias light="gsettings reset org.gnome.desktop.interface color-scheme"
+alias light="gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'"
 #####################################################
 ################ BEGIN  PATHS #######################
 #####################################################
@@ -763,3 +763,4 @@ export PATH=/home/dle/.opencode/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+alias ssh="kitten ssh"
