@@ -764,3 +764,7 @@ export PATH=/home/dle/.opencode/bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 alias ssh="kitten ssh"
+
+# >>> Codex installer >>>
+export PATH="/home/dle/.local/bin:$PATH"
+# <<< Codex installer <<<
