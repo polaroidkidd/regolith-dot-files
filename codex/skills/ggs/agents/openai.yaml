@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Git Skills"
+  short_description: "Ticket-based GitLab commits and MR workflows"
+  default_prompt: "Use $ggs to prepare a ticket-prefixed commit and draft GitLab merge request."

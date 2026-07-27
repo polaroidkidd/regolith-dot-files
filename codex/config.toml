@@ -1,0 +1,149 @@
+approvals_reviewer = "auto_review"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "xhigh"
+service_tier = "default"
+personality = "pragmatic"
+[projects."/home/dle"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/me/services"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/me/whatsin.fyi"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/ti8m/cic/cic-fe"]
+trust_level = "trusted"
+
+[projects."/home/dle/.config/regolith3"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/ti8m/cic/sob/managed"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/me/zmk-config"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/ti8m/cic/sob/managed/cic-digital-onboarding-backend"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/ti8m/cic/sob/managed/cdk-env-sob"]
+trust_level = "trusted"
+
+[projects."/home/dle/DevWork/ti8m/cic/sob/managed/cic-fe"]
+trust_level = "trusted"
+
+[tui]
+pet = "null-signal"
+
+[tui.model_availability_nux]
+"gpt-5.6-sol" = 4
+
+[marketplaces.openai-bundled]
+last_updated = "2026-07-27T18:29:44Z"
+source_type = "local"
+source = "/home/dle/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-07-24T07:08:48Z"
+source_type = "local"
+source = "/home/dle/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."google-calendar@openai-curated"]
+enabled = true
+
+[plugins."slack@openai-curated"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[features]
+js_repl = false
+remote_connections = true
+memories = false
+chronicle = false
+plugins = true
+hooks = true
+plugin_hooks = true
+
+[mcp_servers.node_repl]
+args = []
+command = "/opt/codex-desktop/resources/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = "/opt/codex-desktop/resources/node-runtime/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/home/dle/.codex"
+CODEX_HOME = "/home/dle/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "461c4ba94b821ec805da79c8e8138fe510b1b3358609fc93da47387a2cf3fbf3,6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,4cab8529c1e4dfdc54af637a5e3b12340d528c8647f56d25eb8cf55abeddca3f,589f52ab01afe66e202a81b320053d3af676981d348890cc9cff76c39984b64f"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.715.31925"
+
+[mcp_servers.node_repl.tools]
+
+[mcp_servers.node_repl.tools.js]
+approval_mode = "approve"
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = false
+followUpQueueMode = "steer"
+show-context-window-usage = true
+open-local-url-in-target-preference = "external-browser"
+selected-avatar-id = "null-signal"
+
+[memories]
+generate_memories = false
+use_memories = false
+
+[hooks.state]
+
+[hooks.state."/home/dle/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:5dfcd71c07fd27a68a5be7c7f2a04ffb95b75a7bdf7207c252eb5468edce369d"
+
+[hooks.state."/home/dle/.codex/hooks.json:permission_request:0:0"]
+trusted_hash = "sha256:6187ef9925687d6a095835fcc8ce02d05f6c56b8f380c527331ab4c853e2289b"
+
+[hooks.state."/home/dle/.codex/hooks.json:post_tool_use:0:0"]
+trusted_hash = "sha256:9573643d9ac08231150448319507b5331e877e58139e7c3a8b1b74c484840011"
+
+[hooks.state."/home/dle/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:70eed40900c6945518dbde76e5a05c4fc6dc657163bec5bbcf1a6cf8e56dd211"
+
+[hooks.state."/home/dle/.codex/hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:ba44d704f0d1e59db4b18c4752addd1f84114cccb2a4d16afdc1caf100f62f2f"
+
+[hooks.state."/home/dle/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:1c089944ed53d0eb544c419c3d17f5b8507ca9070988f750faaefcbeb238bdc6"
+
+
