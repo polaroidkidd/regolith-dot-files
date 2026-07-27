@@ -1,85 +1,66 @@
 ---
 name: ggs
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: "Global Git Skills: platform-agnostic workflows for inspecting Git repositories, creating atomic commits, deriving ticket-aware messages, rebasing safely, opening or updating pull/merge requests, addressing review feedback, and diagnosing CI. Use for Git work across GitHub, GitLab, Bitbucket, and other hosting platforms; route hosting actions through the repository's connected integration or supported provider tool."
 ---
 
-# Ggs
+# Global Git Skills
 
-## Overview
+Apply consistent Git practices without assuming a hosting platform, default branch,
+ticket prefix, package manager, or CI system.
 
-[TODO: 1-2 sentences explaining what this skill enables]
+## Establish Context
 
-## Structuring This Skill
+1. Read applicable `AGENTS.md` files and repository contribution guidance.
+2. Inspect `git status`, the current branch, remotes, recent history, and relevant diffs.
+3. Detect the hosting platform from `git remote get-url origin`; do not infer it from
+   local directory names.
+4. Detect repository conventions from hooks, history, templates, and project docs.
+5. Preserve unrelated user changes and stop before destructive or ambiguous actions.
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## Route Hosting Actions
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" -> "Reading" -> "Creating" -> "Editing"
-- Structure: ## Overview -> ## Workflow Decision Tree -> ## Step 1 -> ## Step 2...
+- Use native `git` for local history, staging, commits, fetches, rebases, and pushes.
+- For GitHub repositories, use the relevant Codex GitHub skill and connected GitHub
+  integration for pull requests, issues, reviews, comments, and checks. Never use `gh`.
+- For GitLab repositories, use an available connected integration; otherwise use
+  authenticated `glab` when installed and allowed.
+- For other hosts, prefer an available connected integration or supported host tool.
+  If no capable integration exists, explain the limitation before attempting a
+  different interface.
+- Follow project and user instructions when they impose a stricter tool policy.
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" -> "Merge PDFs" -> "Split PDFs" -> "Extract Text"
-- Structure: ## Overview -> ## Quick Start -> ## Task Category 1 -> ## Task Category 2...
+Read [references/provider-routing.md](references/provider-routing.md) before any
+remote hosting action.
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" -> "Colors" -> "Typography" -> "Features"
-- Structure: ## Overview -> ## Guidelines -> ## Specifications -> ## Usage...
+## Apply Global Rules
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" -> numbered capability list
-- Structure: ## Overview -> ## Core Capabilities -> ### 1. Feature -> ### 2. Feature...
+- Make one logical change per commit.
+- Stage explicit paths. Never use `git add .`, `git add -A`, or `git add -u`.
+- Review `git diff --staged` immediately before committing.
+- Derive a leading ticket such as `ABC-123` from the branch when present; never
+  hardcode a project prefix. If absent, follow repository history or stated policy.
+- Use imperative, capitalized subjects with no trailing period. Honor stricter local
+  length and body conventions.
+- Never add generated attribution or `Co-Authored-By` lines unless the user asks.
+- Detect the default or target branch; do not assume `main` or `master`.
+- Use `--force-with-lease`, never `--force`, when rewriting a published branch.
+- Run the repository's own verification commands before pushing or requesting review.
+- Create change requests as drafts when supported, unless instructed otherwise; mark
+  ready only after required checks pass and the description is complete.
+- Use the repository's pull or merge request template exactly when one exists. Remove
+  irrelevant optional sections and do not add custom generator footers.
+- Address review feedback before replying or resolving. Preserve review context by
+  preferring follow-up commits once review has started.
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+## Select a Workflow
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+- Create or amend commits: read [references/commit.md](references/commit.md).
+- Rebase onto a target branch: read [references/rebase.md](references/rebase.md).
+- Open a pull or merge request: read
+  [references/open-change-request.md](references/open-change-request.md).
+- Update a pull or merge request or address feedback: read
+  [references/update-change-request.md](references/update-change-request.md).
+- Diagnose or fix CI: read [references/fix-ci.md](references/fix-ci.md).
 
-## [TODO: Replace with the first main section based on chosen structure]
-
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
-
-## Resources (optional)
-
-Create only the resource directories this skill actually needs. Delete this section if no resources are required.
-
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
-
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
-
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
-
-**Note:** Scripts may be executed without loading into context, but can still be read by Codex for patching or environment adjustments.
-
-### references/
-Documentation and reference material intended to be loaded into context to inform Codex's process and thinking.
-
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
-
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Codex should reference while working.
-
-### assets/
-Files not intended to be loaded into context, but rather used within the output Codex produces.
-
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
-
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
-
----
-
-**Not every skill requires all three types of resources.**
+Load only the reference needed for the requested workflow, plus provider routing when
+the workflow touches the hosting platform.

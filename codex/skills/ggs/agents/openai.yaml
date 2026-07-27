@@ -1,4 +1,4 @@
 interface:
   display_name: "Global Git Skills"
-  short_description: "Ticket-based GitLab commits and MR workflows"
-  default_prompt: "Use $ggs to prepare a ticket-prefixed commit and draft GitLab merge request."
+  short_description: "Platform-agnostic Git and review workflows"
+  default_prompt: "Use $ggs to prepare atomic commits and publish a draft change request for the detected hosting platform."
