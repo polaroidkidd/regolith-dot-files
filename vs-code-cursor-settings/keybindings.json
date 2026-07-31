@@ -97,10 +97,6 @@
         "command": "-supermaven.addToChat"
     },
     {
-        "key": "ctrl+shift+q",
-        "command": "supermaven.addToChat"
-    },
-    {
         "key": "ctrl+shift+c",
         "command": "-workbench.action.terminal.openNativeConsole",
         "when": "!terminalFocus"
@@ -175,7 +171,7 @@
         "command": "-workbench.action.togglePanel"
     },
     {
-        "key": "ctrl+shift+e r",
+        "key": "ctrl+shift+q",
         "command": "workbench.files.action.showActiveFileInExplorer"
     }
 ]
