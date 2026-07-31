@@ -3,7 +3,7 @@
 ###############################################################################
 
 # Open new tiled windows below the focused container by default.
-default_orientation vertical
+# default_orientation vertical
 
 ## Modify // Window Position // <><Shift> ↑ ↓ ← → ##
 bindsym $mod+Shift+Left move left
