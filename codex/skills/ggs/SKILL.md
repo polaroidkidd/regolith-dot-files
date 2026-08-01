@@ -1,6 +1,6 @@
 ---
 name: ggs
-description: "Global Git Skills: platform-agnostic workflows for inspecting Git repositories, creating atomic commits, deriving ticket-aware messages, rebasing safely, opening or updating pull/merge requests, addressing review feedback, and diagnosing CI. Use for Git work across GitHub, GitLab, Bitbucket, and other hosting platforms; route hosting actions through the repository's connected integration or supported provider tool."
+description: "Global Git Skills: platform-agnostic workflows for inspecting Git repositories, creating atomic commits, handling repository changeset conventions, deriving ticket-aware messages, rebasing safely, opening or updating pull/merge requests, addressing review feedback, and diagnosing CI. Use for Git work across GitHub, GitLab, Bitbucket, and other hosting platforms; route hosting actions through the repository's connected integration or supported provider tool."
 ---
 
 # Global Git Skills
@@ -45,10 +45,14 @@ remote hosting action.
 - Detect the default or target branch; do not assume `main` or `master`.
 - Use `--force-with-lease`, never `--force`, when rewriting a published branch.
 - Run the repository's own verification commands before pushing or requesting review.
-- Create change requests as drafts when supported, unless instructed otherwise; mark
-  ready only after required checks pass and the description is complete.
+- Before opening a change request, detect repository changeset or release-fragment
+  conventions and resolve whether the current change needs one before pushing.
+- Create change requests ready for review when supported, unless the user explicitly
+  requests a draft or repository policy requires one.
 - Use the repository's pull or merge request template exactly when one exists. Remove
   irrelevant optional sections and do not add custom generator footers.
+- Never add agent branding such as `[codex]`, `Codex:`, or similar labels to change
+  request titles.
 - Address review feedback before replying or resolving. Preserve review context by
   preferring follow-up commits once review has started.
 

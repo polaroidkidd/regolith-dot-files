@@ -11,10 +11,23 @@ Read [provider-routing.md](provider-routing.md) before interacting with the host
 4. Confirm commits are atomic and follow repository message conventions.
 5. Locate the provider's pull or merge request template and read it in full.
 
-Common template locations include `.github/PULL_REQUEST_TEMPLATE.md`,
+Common template locations include `.github/pull_request_template.md`,
+`.github/PULL_REQUEST_TEMPLATE.md`,
 `.github/PULL_REQUEST_TEMPLATE/*.md`, and
 `.gitlab/merge_request_templates/*.md`. Also inspect project instructions for custom
 locations.
+
+## Confirm Changeset Handling
+
+Inspect repository conventions such as `.changeset/`, package scripts, release tooling,
+or provider-specific release fragments. When the repository uses them and the request
+does not already state a preference, ask the user whether to create one before pushing
+or opening the change request.
+
+If requested, create the changeset or release fragment using the repository convention,
+validate it when a validator exists, and commit it before publication. If declined,
+proceed and report that none was added. Do not introduce a changeset system into a
+repository that does not already use one unless the user explicitly asks.
 
 ## Compose
 
@@ -24,9 +37,25 @@ Derive a leading ticket from the branch when present. Use a concise, imperative 
 TICKET-1234: Add OAuth authentication
 ```
 
+Do not add agent branding, issue labels, `[codex]`, `Codex:`, or similar prefixes to
+the title.
+
 When a project template exists, preserve its headings and instructions, fill only
 relevant sections, and remove optional placeholders only when the template permits it.
 Do not add custom sections or generator footers.
+
+For a template containing `# Summary` and change-category sections:
+
+- Fill `# Summary` with concrete details from the complete diff, commit history, and
+  user request.
+- Keep only applicable `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, and
+  `Security` sections, preserving their original order.
+- Delete placeholder comments and empty category sections when the template permits.
+- Do not add an `Unreleased` wrapper, Review Notes, Testing, Checklist, verification,
+  or other sections unless the template contains them or the user asks.
+- Keep the body factual. Do not invent issue links, tests, or manual validation.
+- Keep verification details in the final response unless the template contains a place
+  for them or the user asks to include them.
 
 When no template exists, use only relevant Keep-a-Changelog categories:
 
@@ -41,19 +70,26 @@ When no template exists, use only relevant Keep-a-Changelog categories:
 - Prevent stale sessions after token refresh; verify with session tests.
 ```
 
-Explain cause, fix, and verification for substantive bug fixes. Base the description
-on the complete diff and commit range, not only the latest commit.
+Explain cause and fix for substantive bug fixes. Base the description on the complete
+diff and commit range, not only the latest commit.
 
 ## Publish
 
 Push the current branch only when remote publication is within the request. Open the
 change request through the selected provider interface and set the verified target.
-Create it as a draft when the provider supports drafts, unless the user or project
-policy says otherwise.
+Create it ready for review when the provider supports that state, unless the user
+explicitly requests a draft or repository policy requires one.
 
 Apply labels, milestones, reviewers, and assignees only when requested or required by
 repository policy. Do not carry GitLab-specific assignment conventions to other hosts.
 
-Inspect remote checks after creation. Mark the change request ready only when required
-checks pass, the description is complete, and the user's requested workflow includes
-the ready transition; otherwise leave it as a draft and report what remains.
+Inspect remote checks after creation and report pending or failing checks. Do not move
+an explicitly requested draft to ready unless required checks pass, the description is
+complete, and the user's requested workflow includes the ready transition.
+
+## Report
+
+In the final response, include the change request URL, target/base branch, source/head
+branch, verification run, and current working-tree status. Mention conflicts resolved
+and checks skipped or unable to run. Report the draft or ready state and any remaining
+required checks without claiming success for checks that were not observed.
