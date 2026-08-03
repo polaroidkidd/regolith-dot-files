@@ -228,7 +228,7 @@ function __git-remote-copy() {
     echo -n "$url" | xclip -sel clip
     echo "Remote URL copied to clipboard: $url"
 }
-alias gremote=__git-remote-copy
+alias grc=__git-remote-copy
 
 __regolith_zshrc_dir="${${(%):-%N}:A:h}"
 if [[ -r "$__regolith_zshrc_dir/git-clean.zsh" ]]; then
