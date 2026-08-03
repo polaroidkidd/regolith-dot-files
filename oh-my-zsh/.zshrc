@@ -768,3 +768,4 @@ alias ssh="kitten ssh"
 # >>> Codex installer >>>
 export PATH="/home/dle/.local/bin:$PATH"
 # <<< Codex installer <<<
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
