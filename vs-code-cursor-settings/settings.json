@@ -270,4 +270,6 @@
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
   ],
+  "intellij.region": "europe",
+  "intellij.dataSharing": "none",
 }
