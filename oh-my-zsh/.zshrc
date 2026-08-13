@@ -115,6 +115,7 @@ export TMOUT=0
 # Add wisely, as too many plugins slow down shell startup.
 zstyle ':omz:plugins:nvm' autoload yes
 plugins=(
+  sdk
   nvm
   z
   git
@@ -684,7 +685,7 @@ alias rm="/usr/bin/safe-rm"
 
 # local path
 PATH="/home/dle/.local/bin:$PATH"
-export PATH="/home/dle/DevTools/homebrew/bin:$PATH"
+# export PATH="/home/dle/DevTools/homebrew/bin:$PATH"
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
@@ -768,4 +769,4 @@ alias ssh="kitten ssh"
 # >>> Codex installer >>>
 export PATH="/home/dle/.local/bin:$PATH"
 # <<< Codex installer <<<
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/dle/DevTools/homebrew/bin/brew shellenv)"
