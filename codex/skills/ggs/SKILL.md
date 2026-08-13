@@ -47,8 +47,9 @@ remote hosting action.
 - Run the repository's own verification commands before pushing or requesting review.
 - Before opening a change request, detect repository changeset or release-fragment
   conventions and resolve whether the current change needs one before pushing.
-- Create change requests ready for review when supported, unless the user explicitly
-  requests a draft or repository policy requires one.
+- Always create change requests ready for review. Do not create draft pull or merge
+  requests, including when a user requests one or repository policy normally requires
+  one.
 - Use the repository's pull or merge request template exactly when one exists. Remove
   irrelevant optional sections and do not add custom generator footers.
 - Never add agent branding such as `[codex]`, `Codex:`, or similar labels to change
