@@ -624,7 +624,7 @@ function __tks(){
 }
 
 function __tas(){
-  tmux attach-session -t ${1} 2>/dev/null || tmux new-session -s ${1}
+  tmux attach-session -t "${1}"
 }
 
 function __tkill(){
