@@ -770,3 +770,7 @@ alias ssh="kitten ssh"
 export PATH="/home/dle/.local/bin:$PATH"
 # <<< Codex installer <<<
 eval "$(/home/dle/DevTools/homebrew/bin/brew shellenv)"
+
+
+# Stop claude from chaning it's directory
+export CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1
