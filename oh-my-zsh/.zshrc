@@ -126,7 +126,6 @@ plugins=(
   safe-paste
   pnpm-shell-completion
   gcloud
-  kubectl-autocomplete
   netbird  
   kubectl
   oc
@@ -774,3 +773,12 @@ eval "$(/home/dle/DevTools/homebrew/bin/brew shellenv)"
 
 # Stop claude from chaning it's directory
 export CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1
+
+
+# FOR kubernetes pass academy course
+export KUBECONFIG=/home/dle/DevWork/ti8m/academy/kubernetis-paas-cluster/kube-config.yaml
+
+export PATH="$HOME/go/bin:$PATH"
+
+[[ -r "$HOME/.config/regolith3/oh-my-zsh/kubectl_fzf.plugin.zsh" ]] &&
+  source "$HOME/.config/regolith3/oh-my-zsh/kubectl_fzf.plugin.zsh"
