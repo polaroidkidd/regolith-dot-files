@@ -164,7 +164,7 @@ source $ZSH/oh-my-zsh.sh
 
 fpath=(~/.zsh/completion $fpath)
 fpath=(~/.oh-my-zsh/custom/completions $fpath)
-#fpath=(~/.linuxbrew/share/zsh/site-functions/ $fpath)
+
 fpath=(~/DevTools/blackblaze/B2_Command_Line_Tool/contrib $fpath)
   fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -Uz compinit && compinit -i
@@ -269,6 +269,14 @@ alias gwtulk='git worktree unlock'
 
 # Netbird 
 alias nb="netbird"
+netbird() {
+  if [[ $1 == ssh && $TERM == xterm-kitty ]]; then
+    TERM=xterm-256color command netbird "$@"
+  else
+    command netbird "$@"
+  fi
+}
+source "$HOME/.config/regolith3/oh-my-zsh/netbird_completion.plugin.zsh"
 function __gwgo() {
   git worktree add "$1" && cd "$1"
 }
@@ -684,7 +692,7 @@ alias rm="/usr/bin/safe-rm"
 
 # local path
 PATH="/home/dle/.local/bin:$PATH"
-# export PATH="/home/dle/DevTools/homebrew/bin:$PATH"
+
 #####################################################
 ################ BEGIN  ENVS  #######################
 #####################################################
@@ -700,7 +708,7 @@ source ~/.envs/.all.sh
 # Use Android cli
 # export PATH="/home/dle/Android/Sdk/cmdline-tools/latest/bin:$PATH"
 # source <(doctl completion zsh)
-# eval $(~/.linuxbrew/bin/brew shellenv)
+
 
 export JAVA_HOME=/home/dle/.sdkman/candidates/java/current/bin/java
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -765,11 +773,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 alias ssh="kitten ssh"
 
-# >>> Codex installer >>>
-export PATH="/home/dle/.local/bin:$PATH"
-# <<< Codex installer <<<
-eval "$(/home/dle/DevTools/homebrew/bin/brew shellenv)"
-
 
 # Stop claude from chaning it's directory
 export CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1
@@ -782,3 +785,5 @@ export PATH="$HOME/go/bin:$PATH"
 
 [[ -r "$HOME/.config/regolith3/oh-my-zsh/kubectl_fzf.plugin.zsh" ]] &&
   source "$HOME/.config/regolith3/oh-my-zsh/kubectl_fzf.plugin.zsh"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
