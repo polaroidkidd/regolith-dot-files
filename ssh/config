@@ -72,12 +72,12 @@ Host whatsin.staging.db
     LocalForward 5433 localhost:5432 # PostgreSQL staging
     IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
-Host coolify.control-center
-    HostName 135.181.94.123
-    User rootish
+
+Host dbs
+    HostName 91.98.73.143
+    User administrator
     Port 47899
-    LocalForward 8080 localhost:80
-    IdentityFile /home/dle/.ssh/rootish@hetzner.dle.dev
+    IdentityFile /home/dle/.ssh/dle.whatsin@hetzner
 
 Host *
   IdentitiesOnly yes

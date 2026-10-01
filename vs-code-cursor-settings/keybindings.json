@@ -173,5 +173,15 @@
     {
         "key": "ctrl+shift+q",
         "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus"
     }
 ]
